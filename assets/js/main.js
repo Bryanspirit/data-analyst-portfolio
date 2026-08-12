@@ -110,6 +110,44 @@
     });
   }());
 
+  /* ══════════ 4b. method x programme matrix ══════════
+     Built here rather than hand-written as SVG so the rows stay easy to
+     edit. A cell is filled only where the CV states the method was used
+     on that programme. Nothing is scored, weighted or estimated. */
+  (function matrix() {
+    var host = $('#mtxRows');
+    if (!host) return;
+
+    var COLS = [360, 490, 620, 750];   // energy, food, sovereign, adoption
+    var ROWS = [
+      ['Multi-source data integration',    [1, 1, 1, 0]],
+      ['Comparative analysis',             [0, 1, 1, 0]],
+      ['Longitudinal analysis',            [0, 1, 1, 0]],
+      ['Statistical analysis',             [1, 1, 1, 1]],
+      ['Machine learning',                 [0, 0, 1, 0]],
+      ['Systems and ecosystem mapping',    [1, 0, 1, 1]],
+      ['Framework and architecture design',[1, 1, 1, 0]],
+      ['Evidence gap analysis',            [0, 1, 0, 0]]
+    ];
+
+    var s = '';
+    ROWS.forEach(function (row, i) {
+      var cy = 70 + i * 38;
+      s += '<text class="mx-row" x="0" y="' + (cy + 4.5) + '">' + row[0] + '</text>';
+      s += '<text class="mx-n" x="300" y="' + (cy + 4) + '" text-anchor="end">' +
+           row[1].reduce(function (a, b) { return a + b; }, 0) + '</text>';
+      row[1].forEach(function (on, c) {
+        var x = COLS[c] - 14;
+        s += '<rect class="' + (on ? 'mx-on' : 'mx-off') + '" x="' + x + '" y="' + (cy - 14) +
+             '" width="28" height="28" rx="8"/>';
+      });
+      if (i < ROWS.length - 1) {
+        s += '<line class="mx-rule" x1="0" y1="' + (cy + 19) + '" x2="800" y2="' + (cy + 19) + '"/>';
+      }
+    });
+    host.innerHTML = s;
+  }());
+
   /* ═════════════════ 5. the systems map ═════════════════ */
   (function systemsMap() {
     var svg = $('#smap');

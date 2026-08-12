@@ -159,6 +159,39 @@
       </div>
     </div>
 
+    <!-- ── infographic: where the three fields overlap ── -->
+    <div class="panel rv" style="margin-bottom:20px">
+      <div class="panel-h"><b>Where the work sits</b><span class="r">Three fields, one overlap</span></div>
+      <div class="venn-wrap" style="padding:22px 22px 8px">
+        <!-- labels sit at the widest point of each exclusive lobe, so no
+             text ever crosses a stroke. Move a circle and you must move
+             its label with it. -->
+        <svg class="plot venn" viewBox="85 12 490 470" role="img"
+             aria-label="Three overlapping circles: energy systems, development policy and applied analytics. Strategy and research sits in the region where all three overlap.">
+          <circle class="v1" cx="255" cy="185" r="150"/>
+          <circle class="v2" cx="405" cy="185" r="150"/>
+          <circle class="v3" cx="330" cy="315" r="150"/>
+
+          <text class="vl" x="180" y="180" text-anchor="middle">Energy systems</text>
+          <text class="vs" x="172" y="199" text-anchor="middle">grids, tariffs, access</text>
+
+          <text class="vl" x="480" y="180" text-anchor="middle">Development policy</text>
+          <text class="vs" x="480" y="199" text-anchor="middle">Global South, GIZ</text>
+
+          <text class="vl" x="330" y="386" text-anchor="middle">Applied analytics</text>
+          <text class="vs" x="330" y="405" text-anchor="middle">Python, R, SQL, modelling</text>
+
+          <text class="vc" x="330" y="250" text-anchor="middle">Strategy</text>
+          <text class="vc" x="330" y="274" text-anchor="middle">and research</text>
+        </svg>
+      </div>
+      <p class="panel-f">
+        Most people working on energy in the Global South sit in one or two of these. The
+        overlap is where a technically sound recommendation survives contact with the
+        institution that has to act on it.
+      </p>
+    </div>
+
     <!-- ── infographic 1: the method spine ── -->
     <div class="panel rv" style="margin-bottom:52px">
       <div class="panel-h"><b>How an engagement runs</b><span class="r">Each stage constrains the next</span></div>
@@ -234,7 +267,9 @@
     <!-- ── infographic 2: the interactive systems map ── -->
     <div class="smap rv">
       <div class="smap-fig">
-        <svg id="smap" viewBox="0 0 900 500" role="img"
+        <!-- role="group", not "img": the nodes inside are real buttons and
+             role="img" would hide them from assistive technology -->
+        <svg id="smap" viewBox="0 0 900 500" role="group"
              aria-label="Systems map. Household energy behaviour at the centre, connected to tariff structure, appliance stock, household income, weather and season, grid conditions and information. All of it sits inside policy and system design.">
           <rect class="frame" x="18" y="46" width="864" height="436" rx="16"/>
           <text class="frame-l" x="42" y="34">Policy and system design</text>
@@ -303,6 +338,29 @@
       the technical one.
     </p>
 
+    <!-- ── infographic: which method ran on which programme ── -->
+    <div class="panel rv" style="margin-bottom:30px">
+      <div class="panel-h"><b>Methods across the four programmes</b><span class="r">From the project records</span></div>
+      <div style="padding:22px 22px 6px">
+        <svg class="plot mtx" viewBox="0 0 900 386" role="img"
+             aria-label="Matrix of eight research methods against four programmes. Multi-source data integration ran on energy, food security and sovereign risk. Comparative analysis on food security and sovereign risk. Longitudinal analysis on food security and sovereign risk. Statistical analysis on all four. Machine learning on sovereign risk only. Systems and ecosystem mapping on energy, sovereign risk and adoption. Framework and architecture design on energy, food security and sovereign risk. Evidence gap analysis on food security only.">
+          <text class="mx-col" x="360" y="26" text-anchor="middle">ENERGY</text>
+          <text class="mx-col" x="490" y="26" text-anchor="middle">FOOD</text>
+          <text class="mx-col" x="620" y="26" text-anchor="middle">SOVEREIGN</text>
+          <text class="mx-col" x="750" y="26" text-anchor="middle">ADOPTION</text>
+          <line class="mx-rule" x1="0" y1="42" x2="800" y2="42"/>
+
+          <g id="mtxRows"></g>
+        </svg>
+      </div>
+      <p class="panel-f">
+        Read down a column to see what a programme demanded. Read across a row to see
+        which method travels. Machine learning shows up once, and framework design shows
+        up three times, which is a fair description of what this kind of work actually is.
+        <small>Filled where the programme used the method. Nothing here is scored or weighted.</small>
+      </p>
+    </div>
+
     <div class="filters rv" role="group" aria-label="Filter research by theme">
       <span class="flabel">Filter</span>
       <button type="button" class="fbtn" data-f="all" aria-pressed="true">All</button>
@@ -337,6 +395,42 @@
           <div class="finding">
             <p class="lbl">Core finding</p>
             <p>The binding constraint was rarely technical. Households responded rationally to tariffs, appliance stock and information they did not have. The gap sat between how the energy system was designed and how people actually live inside it.</p>
+          </div>
+
+          <!-- ── infographic: the five sources, integrated ── -->
+          <div class="panel" style="margin-top:26px">
+            <div class="panel-h"><b>Five sources, one analytical picture</b><span class="r">Where the difficulty actually was</span></div>
+            <div style="padding:22px 22px 12px">
+              <svg class="plot fan" viewBox="0 0 610 244" role="img"
+                   aria-label="Five data sources, appliance survey data, consumption records, tariff schedules, meteorological data and energy-sector information, converge into a single analytical picture.">
+                <defs><marker id="ar5" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 0 L10 5 L0 10 z" fill="currentColor"/></marker></defs>
+                <g class="fn-src">
+                  <rect x="8" y="10"  width="212" height="34" rx="8"/><text x="24" y="32">Appliance survey data</text>
+                  <rect x="8" y="54"  width="212" height="34" rx="8"/><text x="24" y="76">Consumption records</text>
+                  <rect x="8" y="98"  width="212" height="34" rx="8"/><text x="24" y="120">Tariff schedules</text>
+                  <rect x="8" y="142" width="212" height="34" rx="8"/><text x="24" y="164">Meteorological data</text>
+                  <rect x="8" y="186" width="212" height="34" rx="8"/><text x="24" y="208">Energy-sector information</text>
+                </g>
+                <g class="fn-link">
+                  <path d="M220 27 H256"/><path d="M220 71 H256"/><path d="M220 115 H256"/>
+                  <path d="M220 159 H256"/><path d="M220 203 H256"/>
+                  <path d="M256 27 V203"/>
+                  <path d="M256 115 H300" marker-end="url(#ar5)"/>
+                </g>
+                <g class="fn-out">
+                  <rect x="300" y="86" width="300" height="58" rx="10"/>
+                  <text x="450" y="110" text-anchor="middle">One analytical picture</text>
+                  <text class="fn-s" x="450" y="130" text-anchor="middle">household behaviour, priced and explained</text>
+                </g>
+                <text class="fn-note" x="300" y="176">sources of differing quality and coverage</text>
+                <text class="fn-note" x="300" y="194">no shared key, no shared time base</text>
+              </svg>
+            </div>
+            <p class="panel-f">
+              The modelling was never the hard part. Getting five sources that were never
+              designed to be joined into one usable frame was, and that work is why the
+              rest of the study was possible at all.
+            </p>
           </div>
 
           <!-- ── infographic 3: the DSM schematic ── -->
@@ -605,6 +699,66 @@
     <div class="shead rv"><span class="n">&sect; 05</span><span>Experience</span><span class="line"></span><span>Four roles</span></div>
     <h2 class="stitle rv">Where the work has been <em>done</em></h2>
 
+    <!-- ── infographic: study and work, on one timeline ── -->
+    <div class="panel rv" style="margin-bottom:34px">
+      <div class="panel-h"><b>Study and work, on one timeline</b><span class="r">2021 to present</span></div>
+      <div style="padding:22px 22px 10px">
+        <svg class="plot gantt" viewBox="0 0 1000 306" role="img"
+             aria-label="Timeline from 2021 to 2027. HND Computer Science ran January 2021 to December 2023, overlapping the BTech in AI and Robotics from January 2023 to December 2025. Push-Link Consult November 2023 to October 2024, Pensive Global Consultancy January 2025 to October 2025, the GIZ-linked programme at Koforidua Technical University October 2025 to March 2026, and Star Assurance from a start date still to be confirmed through to the present.">
+          <text class="g-year" x="260" y="22" text-anchor="middle">2021</text>
+          <text class="g-year" x="380" y="22" text-anchor="middle">2022</text>
+          <text class="g-year" x="500" y="22" text-anchor="middle">2023</text>
+          <text class="g-year" x="620" y="22" text-anchor="middle">2024</text>
+          <text class="g-year" x="740" y="22" text-anchor="middle">2025</text>
+          <text class="g-year" x="860" y="22" text-anchor="middle">2026</text>
+          <text class="g-year" x="980" y="22" text-anchor="middle">2027</text>
+
+          <line class="g-grid" x1="260" y1="32" x2="260" y2="258"/>
+          <line class="g-grid" x1="380" y1="32" x2="380" y2="258"/>
+          <line class="g-grid" x1="500" y1="32" x2="500" y2="258"/>
+          <line class="g-grid" x1="620" y1="32" x2="620" y2="258"/>
+          <line class="g-grid" x1="740" y1="32" x2="740" y2="258"/>
+          <line class="g-grid" x1="860" y1="32" x2="860" y2="258"/>
+          <line class="g-grid" x1="980" y1="32" x2="980" y2="258"/>
+          <line class="g-axis" x1="260" y1="32" x2="980" y2="32"/>
+
+          <text class="g-lab" x="0" y="56">HND, Computer Science</text>
+          <text class="g-sub" x="0" y="70">Jan 2021 to Dec 2023</text>
+          <rect class="g-edu" x="260" y="49" width="360" height="18" rx="5"/>
+
+          <text class="g-lab" x="0" y="92">B.Tech, AI and Robotics</text>
+          <text class="g-sub" x="0" y="106">Jan 2023 to Dec 2025</text>
+          <rect class="g-edu" x="500" y="85" width="360" height="18" rx="5"/>
+
+          <text class="g-lab" x="0" y="128">Push-Link Consult</text>
+          <text class="g-sub" x="0" y="142">Nov 2023 to Oct 2024</text>
+          <rect class="g-role" x="600" y="121" width="120" height="18" rx="5"/>
+
+          <text class="g-lab" x="0" y="164">Pensive Global Consultancy</text>
+          <text class="g-sub" x="0" y="178">Jan 2025 to Oct 2025</text>
+          <rect class="g-role" x="740" y="157" width="100" height="18" rx="5"/>
+
+          <text class="g-lab" x="0" y="200">Koforidua Tech. Univ., GIZ</text>
+          <text class="g-sub" x="0" y="214">Oct 2025 to Mar 2026</text>
+          <rect class="g-role" x="830" y="193" width="60" height="18" rx="5"/>
+
+          <text class="g-lab" x="0" y="236">Star Assurance</text>
+          <text class="g-flag" x="0" y="250">start date to confirm</text>
+          <rect class="g-open" x="890" y="229" width="40" height="18" rx="5"/>
+
+          <line class="g-now" x1="930" y1="32" x2="930" y2="266"/>
+          <text class="g-nowl" x="922" y="46" text-anchor="end">NOW</text>
+
+          <rect class="g-edu"  x="260" y="278" width="22" height="10" rx="3"/>
+          <text class="g-sub"  x="290" y="287">Study</text>
+          <rect class="g-role" x="356" y="278" width="22" height="10" rx="3"/>
+          <text class="g-sub"  x="386" y="287">Role</text>
+          <rect class="g-open" x="440" y="278" width="22" height="10" rx="3"/>
+          <text class="g-sub"  x="470" y="287">Date still to confirm</text>
+        </svg>
+      </div>
+    </div>
+
     <div class="tl rv">
       <article class="job">
         <div class="job-h">
@@ -680,34 +834,45 @@
       <span>Research framework development</span><span>Monitoring and evaluation</span>
     </div>
 
-    <div class="shead rv" style="margin-top:60px"><span class="n">&sect; 07</span><span>Technical</span><span class="line"></span><span>Six areas</span></div>
-    <div class="cols c3 rv">
-      <div class="cell">
-        <h4>Analysis and programming</h4>
-        <div class="chips"><span>Python</span><span>Pandas</span><span>NumPy</span><span>Scikit-learn</span><span>R</span><span>SQL / T-SQL</span><span>SPSS</span><span>Excel</span></div>
+    <div class="shead rv" style="margin-top:60px"><span class="n">&sect; 07</span><span>Technical</span><span class="line"></span><span>The stack, in order of use</span></div>
+
+    <!-- ── infographic: the toolkit as a working sequence, not a logo wall ── -->
+    <p class="cnote rv" style="margin:0 0 14px">Top: fragmented, contradictory, incomplete data</p>
+    <div class="stack rv">
+      <span class="stack-arrow" aria-hidden="true"></span>
+
+      <div class="layer">
+        <div><span class="ln">01</span><h4>Collect and integrate</h4><p>Where most of the time actually goes</p></div>
+        <div class="chips"><span>SQL / T-SQL</span><span>PostgreSQL</span><span>MySQL</span><span>SQL Server</span><span>ETL design</span><span>Data warehousing</span><span>Apache Airflow</span><span>dbt</span><span>PySpark</span></div>
       </div>
-      <div class="cell">
-        <h4>Machine learning and AI</h4>
-        <div class="chips"><span>Random Forest</span><span>K-Means</span><span>LSTM</span><span>TensorFlow / Keras</span><span>NLP</span><span>Whisper</span><span>Feature engineering</span><span>Model evaluation</span></div>
+
+      <div class="layer">
+        <div><span class="ln">02</span><h4>Instrument and measure</h4><p>Generating primary data rather than waiting for it</p></div>
+        <!-- TODO add only the web-analytics tools you have actually used: GA4, Tag Manager, Search Console, Looker Studio -->
+        <div class="chips"><span>Survey and questionnaire design</span><span>Google Ads / SEM</span><span>Campaign performance analysis</span><span>Conversion tracking</span><span>A/B testing</span></div>
       </div>
-      <div class="cell">
-        <h4>Visualisation and BI</h4>
-        <div class="chips"><span>Power BI</span><span>DAX</span><span>KPI dashboards</span><span>Analytical reporting</span></div>
+
+      <div class="layer">
+        <div><span class="ln">03</span><h4>Explore and analyse</h4><p>Distributions and structure before conclusions</p></div>
+        <div class="chips"><span>Python</span><span>Pandas</span><span>NumPy</span><span>R</span><span>SPSS</span><span>Excel</span><span>Statistical analysis</span></div>
       </div>
-      <div class="cell">
-        <h4>Web and digital analytics</h4>
-        <!-- TODO add only the tools you have actually used: GA4, Tag Manager, Search Console, Looker Studio -->
-        <div class="chips"><span>Google Ads / SEM</span><span>Campaign performance analysis</span><span>Conversion tracking</span><span>A/B testing</span></div>
+
+      <div class="layer">
+        <div><span class="ln">04</span><h4>Model</h4><p>Only once the question and the measure are settled</p></div>
+        <div class="chips"><span>Scikit-learn</span><span>Random Forest</span><span>K-Means</span><span>LSTM</span><span>TensorFlow / Keras</span><span>NLP</span><span>Whisper</span><span>Feature engineering</span><span>Model evaluation</span></div>
       </div>
-      <div class="cell">
-        <h4>Data engineering</h4>
-        <div class="chips"><span>ETL design</span><span>Data warehousing</span><span>Apache Airflow</span><span>PySpark</span><span>dbt</span><span>PostgreSQL</span><span>MySQL</span><span>SQL Server</span></div>
+
+      <div class="layer">
+        <div><span class="ln">05</span><h4>Communicate</h4><p>Where analysis either changes a decision or does not</p></div>
+        <div class="chips"><span>Power BI</span><span>DAX</span><span>KPI dashboards</span><span>Analytical reporting</span><span>Decision-support design</span></div>
       </div>
-      <div class="cell">
-        <h4>Development</h4>
+
+      <div class="layer">
+        <div><span class="ln">06</span><h4>Ship and reproduce</h4><p>So the analysis outlives the engagement</p></div>
         <div class="chips"><span>Git</span><span>Docker</span><span>REST APIs</span><span>FastAPI</span><span>Flask</span><span>React</span></div>
       </div>
     </div>
+    <p class="cnote rv" style="margin:14px 0 0">Bottom: a decision somebody can act on</p>
 
     <div class="shead rv" style="margin-top:60px"><span class="n">&sect; 08</span><span>Education</span><span class="line"></span></div>
     <div class="edu rv">

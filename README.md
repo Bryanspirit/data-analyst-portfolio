@@ -41,12 +41,21 @@ without a redraw.
 | Where | What it shows | Interactive |
 |---|---|---|
 | Hero | Grid-and-node motif, the electricity network abstracted | pulse only |
+| Approach | Three-field intersection: energy systems, development policy, applied analytics | no |
 | Approach | The four-stage method spine, with the feedback loop back to stage 01 | no |
 | Systems view | The Tema Central explanatory model, seven nodes | **yes**, select a node to trace its connections |
+| Research intro | Method by programme matrix, eight methods against four programmes | no |
+| Research 01 | The five data sources converging into one analytical picture | no |
 | Research 01 | Demand-side management load-shift panel | **yes**, slider |
 | Research 02 | The food system causal chain, production through to outcome | no |
 | Research 03 | The sovereign risk analytical pipeline, indicators to dashboard | no |
 | Research 04 | The four adoption drivers and where a transition stalls | no |
+| Experience | Study and work on one timeline, 2021 to present | no |
+| Technical | The toolkit as a six-layer working sequence, raw data to decision | no |
+
+The matrix rows live in `assets/js/main.js` (search `ROWS`), so adding a method or a
+programme is a one-line edit rather than hand-written SVG. A cell is filled only where the
+CV states the method was used on that programme; nothing is scored or weighted.
 
 ## House rules
 
