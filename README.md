@@ -21,16 +21,13 @@ No build step, no framework, no npm install. Open `index.html` in a browser and 
 
 ## Still to fill in
 
-Search `index.html` for **`TODO`**. Six things are marked:
+Search `index.html` for **`TODO`**. Four things are marked:
 
-1. **Star Assurance start date.** Currently the timeline shows only "Present".
-2. **Years for the four research projects.** The dossiers show scope but no dates.
-3. **Affiliation for the Tema Central energy study** (independent, academic, or other).
-4. **Data type used in the GIZ programme** (survey, secondary, administrative).
-5. **Languages beyond English.** Fieldwork languages matter for Global South research,
+1. **Years for the four research projects.** The dossiers show scope but no dates.
+2. **Affiliation for the Tema Central energy study** (independent, academic, or other).
+3. **Data type used in the GIZ programme** (survey, secondary, administrative).
+4. **Languages beyond English.** Fieldwork languages matter for Global South research,
    so Twi, Ewe, Ga or French are worth listing if you have them.
-6. **Web analytics tools you have actually used.** GA4, Tag Manager, Search Console and
-   Looker Studio are deliberately left off until you confirm them.
 
 ## The six infographics
 
