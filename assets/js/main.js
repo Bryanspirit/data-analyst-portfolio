@@ -1,16 +1,19 @@
 /* ═══════════════════════════════════════════════════════════════════
-   Bryan Opoku, data analyst portfolio
+   Bryan Opoku Mawunyo Kofi
+   Strategy and research analyst, energy systems and development
 
-   1. theme         light / dark, remembered
-   2. reveal        on-scroll fade, respects reduced motion
-   3. accordion     the analysis records
-   4. filters       records by domain
-   5. copy email
-   6. demo          synthetic claims, scatter + histogram + table
+   1. theme          light / dark, remembered
+   2. reveal         on-scroll fade, respects reduced motion
+   3. filters        research dossiers by theme
+   4. copy email
+   5. systems map    node selection, edge tracing, side panel
+   6. DSM panel      the load-shift schematic
 
-   The demo data is generated from a FIXED SEED so every visitor sees
-   the same 400 claims. It is synthetic. It is not real claims data,
-   and the page says so above the charts. Keep that notice.
+   HONESTY NOTE
+   The load curve in section 6 is an idealised daily shape used to show
+   the mechanism a demand-side intervention depends on. It is NOT data
+   from the Tema Central study, and the page says so directly above the
+   chart. If you edit this file, keep that notice accurate.
    ═══════════════════════════════════════════════════════════════════ */
 (function () {
   'use strict';
@@ -26,7 +29,6 @@
     var saved;
     try { saved = localStorage.getItem('bo-theme'); } catch (e) { saved = null; }
     if (saved === 'light' || saved === 'dark') root.setAttribute('data-theme', saved);
-
     if (!btn) return;
     btn.addEventListener('click', function () {
       var systemDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
@@ -48,44 +50,28 @@
       entries.forEach(function (en) {
         if (en.isIntersecting) { en.target.classList.add('in'); io.unobserve(en.target); }
       });
-    }, { rootMargin: '0px 0px -8% 0px', threshold: 0.05 });
+    }, { rootMargin: '0px 0px -8% 0px', threshold: 0.04 });
     items.forEach(function (el) { io.observe(el); });
   }());
 
-  /* ─────────────────── 3. accordion ─────────────────── */
-  (function accordion() {
-    $$('.rec-btn').forEach(function (btn) {
-      btn.addEventListener('click', function () {
-        var open = btn.getAttribute('aria-expanded') === 'true';
-        btn.setAttribute('aria-expanded', open ? 'false' : 'true');
-        btn.querySelector('.rec-tog').textContent = open ? '+' : '+';
-      });
-    });
-  }());
-
-  /* ──────────────────── 4. filters ──────────────────── */
+  /* ──────────────────── 3. filters ──────────────────── */
   (function filters() {
     var btns  = $$('.fbtn');
-    var recs  = $$('.rec');
+    var items = $$('.dos');
     var count = $('#filterCount');
     if (!btns.length) return;
 
     function apply(f) {
       var shown = 0;
-      recs.forEach(function (rec) {
-        var hit = (f === 'all') || rec.getAttribute('data-cat') === f;
-        rec.hidden = !hit;
+      items.forEach(function (el) {
+        var hit = (f === 'all') || el.getAttribute('data-cat') === f;
+        el.hidden = !hit;
         if (hit) shown++;
-        // collapse anything being hidden, so reopening is predictable
-        if (!hit) {
-          var b = rec.querySelector('.rec-btn');
-          if (b) b.setAttribute('aria-expanded', 'false');
-        }
       });
       if (count) {
         count.textContent = f === 'all'
-          ? 'Showing all ' + shown + ' records'
-          : 'Showing ' + shown + ' of ' + recs.length + ' records';
+          ? 'Showing all ' + shown + ' programmes'
+          : 'Showing ' + shown + ' of ' + items.length + ' programmes';
       }
     }
 
@@ -98,7 +84,7 @@
     apply('all');
   }());
 
-  /* ────────────────── 5. copy email ────────────────── */
+  /* ────────────────── 4. copy email ────────────────── */
   (function copyMail() {
     [['#copyMail', '#copyTxt'], ['#copyMail2', '#copyTxt2']].forEach(function (pair) {
       var btn = $(pair[0]), txt = $(pair[1]);
@@ -124,299 +110,229 @@
     });
   }());
 
-  /* ═══════════════════ 6. the demo ═══════════════════ */
+  /* ═════════════════ 5. the systems map ═════════════════ */
+  (function systemsMap() {
+    var svg = $('#smap');
+    if (!svg) return;
 
-  /* -- deterministic PRNG, so the dataset is identical for everyone -- */
-  function mulberry32(a) {
-    return function () {
-      a |= 0; a = a + 0x6D2B79F5 | 0;
-      var t = Math.imul(a ^ a >>> 15, 1 | a);
-      t = t + Math.imul(t ^ t >>> 7, 61 | t) ^ t;
-      return ((t ^ t >>> 14) >>> 0) / 4294967296;
+    var elLbl   = $('#smLbl');
+    var elTitle = $('#smTitle');
+    var elText  = $('#smText');
+
+    var DEFAULT = {
+      lbl: 'The model',
+      title: 'Six forces, one behaviour',
+      text: 'Household electricity use is usually described as a habit. It is better described as a rational response to six conditions the household does not control. Studying any one of them alone explains very little, which is why the study integrated appliance survey data, consumption records, tariff schedules, meteorological data and energy-sector information into a single picture.'
     };
-  }
-  function gauss(rnd) {                       // Box-Muller
-    var u = 1 - rnd(), v = rnd();
-    return Math.sqrt(-2 * Math.log(u)) * Math.cos(2 * Math.PI * v);
-  }
-  function median(arr) {
-    var s = arr.slice().sort(function (a, b) { return a - b; });
-    var m = Math.floor(s.length / 2);
-    return s.length % 2 ? s[m] : (s[m - 1] + s[m]) / 2;
-  }
 
-  /* -- build 400 synthetic claims -------------------------------- */
-  function buildClaims() {
-    var rnd = mulberry32(20260812);
-    var rows = [], i;
-    for (i = 0; i < 400; i++) {
-      // cover spread over roughly one and a half orders of magnitude
-      var cover = Math.exp(Math.log(9000) + rnd() * (Math.log(520000) - Math.log(9000)));
-      // typical claim sits near a quarter of cover, with real spread
-      var lnRatio = Math.log(0.22) + gauss(rnd) * 0.42;
-      // ~6% of claims come from a different process entirely
-      var odd = rnd() < 0.06;
-      if (odd) lnRatio += 0.9 + rnd() * 1.1;
-      var ratio = Math.exp(lnRatio);
-      // a claim rarely exceeds its cover, so compress the top rather than
-      // hard-clipping it, which would pile identical scores into one bin
-      if (ratio > 1.1) ratio = 1.1 + (ratio - 1.1) * 0.18;
-      rows.push({
-        id: 'CLM-' + String(10240 + i),
-        cover: cover,
-        amount: cover * ratio,
-        lnRatio: Math.log(ratio)
+    var NODES = {
+      core: {
+        lbl: 'At the centre',
+        title: 'Household energy behaviour',
+        text: 'What people actually do: what they own, when they run it, and what they know about what it costs. Every arrow on this map ends here, which is why an intervention aimed at only one of them tends to underperform its business case.'
+      },
+      tariff: {
+        lbl: 'Price signal',
+        title: 'Tariff structure',
+        text: 'The price a household faces, and more importantly whether that price is legible at the moment a decision is made. A tariff that only becomes visible on a bill weeks later is a weak signal, however well designed it is on paper.'
+      },
+      appliance: {
+        lbl: 'Physical stock',
+        title: 'Appliance stock',
+        text: 'What is already in the home sets the ceiling on what any behavioural change can achieve. A household cannot shift load it has no appliance to shift, and cannot become efficient past the efficiency of the equipment it owns.'
+      },
+      income: {
+        lbl: 'Constraint',
+        title: 'Household income',
+        text: 'Determines which efficiency options exist at all, and how hard a tariff change actually bites. It is also why the same policy produces opposite outcomes in two households on the same street.'
+      },
+      weather: {
+        lbl: 'External driver',
+        title: 'Weather and season',
+        text: 'Temperature and season drive cooling load, which is where a large share of the peak sits. This is the variable most often left out of household-level analysis, and leaving it out makes the rest look like noise.'
+      },
+      grid: {
+        lbl: 'Supply side',
+        title: 'Grid conditions',
+        text: 'Reliability changes behaviour. Where supply is uncertain, households plan around outages rather than around price, and a tariff-based intervention is competing with a stronger signal it did not account for.'
+      },
+      info: {
+        lbl: 'The cheap gap',
+        title: 'Information',
+        text: 'What the household knows about its own consumption. Usually the largest gap and the cheapest to close, and the one that makes every other lever on this map work better than it does alone.'
+      }
+    };
+
+    var nodes = $$('.nd', svg);
+    var edges = $$('.ed', svg);
+    var active = null;
+
+    function clear() {
+      active = null;
+      nodes.forEach(function (n) { n.classList.remove('on'); });
+      edges.forEach(function (e) { e.classList.remove('lit', 'dim'); });
+      if (elLbl)   elLbl.textContent   = DEFAULT.lbl;
+      if (elTitle) elTitle.textContent = DEFAULT.title;
+      if (elText)  elText.textContent  = DEFAULT.text;
+    }
+
+    function select(id) {
+      if (active === id) { clear(); return; }
+      active = id;
+      nodes.forEach(function (n) { n.classList.toggle('on', n.getAttribute('data-node') === id); });
+      edges.forEach(function (e) {
+        var hit = e.getAttribute('data-a') === id || e.getAttribute('data-b') === id;
+        e.classList.toggle('lit', hit);
+        e.classList.toggle('dim', !hit);
       });
+      var d = NODES[id];
+      if (!d) return;
+      if (elLbl)   elLbl.textContent   = d.lbl;
+      if (elTitle) elTitle.textContent = d.title;
+      if (elText)  elText.textContent  = d.text;
     }
-    // robust z score: how far the claim-to-cover ratio sits from typical
-    var med = median(rows.map(function (r) { return r.lnRatio; }));
-    var mad = median(rows.map(function (r) { return Math.abs(r.lnRatio - med); }));
-    var scale = 1.4826 * (mad || 1e-6);
-    rows.forEach(function (r) { r.score = Math.abs(r.lnRatio - med) / scale; });
-    return rows;
-  }
 
-  var CLAIMS = null;
-
-  /* -- small formatting + geometry helpers ----------------------- */
-  function fmtK(n) {
-    if (n >= 1e6) return (n / 1e6).toFixed(n < 1e7 ? 1 : 0) + 'M';
-    if (n >= 1e3) return Math.round(n / 1e3) + 'K';
-    return String(Math.round(n));
-  }
-  function esc(s) { return String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;'); }
-
-  /* rounded at the data end, square at the baseline */
-  function barPath(x, y, w, h, r) {
-    if (h <= 0) return '';
-    r = Math.min(r, w / 2, h);
-    return 'M' + x + ',' + (y + h) +
-           'V' + (y + r) +
-           'a' + r + ',' + r + ' 0 0 1 ' + r + ',' + (-r) +
-           'h' + (w - 2 * r) +
-           'a' + r + ',' + r + ' 0 0 1 ' + r + ',' + r +
-           'V' + (y + h) + 'Z';
-  }
-
-  /* round an axis maximum up to a readable number */
-  function niceMax(n) {
-    if (n <= 0) return 1;
-    var p = Math.pow(10, Math.floor(Math.log10(n)));
-    var steps = [1, 2, 2.5, 5, 10];
-    for (var i = 0; i < steps.length; i++) {
-      if (steps[i] * p >= n) return steps[i] * p;
-    }
-    return 10 * p;
-  }
-
-  /* log-scale tick values (1, 3, 10, 30 ...) inside a range */
-  function logTicks(lo, hi) {
-    var out = [], e = Math.floor(Math.log10(lo));
-    for (; e <= Math.ceil(Math.log10(hi)); e++) {
-      [1, 3].forEach(function (m) {
-        var v = m * Math.pow(10, e);
-        if (v >= lo && v <= hi) out.push(v);
+    nodes.forEach(function (n) {
+      var id = n.getAttribute('data-node');
+      n.addEventListener('click', function () { select(id); });
+      n.addEventListener('keydown', function (ev) {
+        if (ev.key === 'Enter' || ev.key === ' ') { ev.preventDefault(); select(id); }
       });
+      // hover previews the tracing without committing the side panel
+      n.addEventListener('mouseenter', function () {
+        if (active) return;
+        edges.forEach(function (e) {
+          var hit = e.getAttribute('data-a') === id || e.getAttribute('data-b') === id;
+          e.classList.toggle('lit', hit);
+          e.classList.toggle('dim', !hit);
+        });
+      });
+      n.addEventListener('mouseleave', function () {
+        if (active) return;
+        edges.forEach(function (e) { e.classList.remove('lit', 'dim'); });
+      });
+    });
+
+    document.addEventListener('keydown', function (ev) { if (ev.key === 'Escape') clear(); });
+  }());
+
+  /* ═════════════ 6. demand-side management panel ═════════════ */
+  (function dsm() {
+    var svg = $('#dsm');
+    var slider = $('#shiftable');
+    if (!svg || !slider) return;
+
+    /* An idealised urban daily load shape, indexed so the evening peak is
+       1.00. Deliberately schematic: the point is the mechanism, not a
+       measurement. Hours 0 to 23. */
+    var BASE = [
+      0.42, 0.38, 0.35, 0.34, 0.36, 0.45,
+      0.62, 0.70, 0.66, 0.60, 0.58, 0.60,
+      0.63, 0.62, 0.60, 0.63, 0.72, 0.88,
+      1.00, 0.98, 0.90, 0.78, 0.62, 0.50
+    ];
+    var PEAK_HOURS = [17, 18, 19, 20, 21];        // where the load is taken from
+    var FILL_HOURS = [1, 2, 3, 4, 10, 11, 12, 13, 14]; // where it goes
+    var FLOOR = 0.60;                              // load below this is not shiftable
+
+    function managed(share) {
+      var out = BASE.slice();
+      var moved = 0;
+      PEAK_HOURS.forEach(function (h) {
+        var above = Math.max(0, BASE[h] - FLOOR);
+        var take = above * share;
+        out[h] = BASE[h] - take;
+        moved += take;
+      });
+      var each = moved / FILL_HOURS.length;
+      FILL_HOURS.forEach(function (h) { out[h] = BASE[h] + each; });
+      return { curve: out, moved: moved };
     }
-    return out;
-  }
 
-  /* -- the tooltip ------------------------------------------------ */
-  var tip = $('#tip');
-  function showTip(html, x, y) {
-    if (!tip) return;
-    tip.innerHTML = html;
-    tip.classList.add('on');
-    var r = tip.getBoundingClientRect();
-    var left = Math.min(Math.max(8, x + 14), window.innerWidth - r.width - 8);
-    var top  = y - r.height - 12 < 8 ? y + 18 : y - r.height - 12;
-    tip.style.left = left + 'px';
-    tip.style.top  = top + 'px';
-  }
-  function hideTip() { if (tip) tip.classList.remove('on'); }
-
-  /* -- scatter: claim amount against cover ------------------------ */
-  function drawScatter(svg, rows, thr) {
-    var W = 460, H = 300;
-    var m = { t: 12, r: 12, b: 34, l: 50 };
-    var pw = W - m.l - m.r, ph = H - m.t - m.b;
-
-    var xLo = 8000,  xHi = 600000;
-    var yLo = 900,   yHi = 700000;
-    var lx = function (v) { return m.l + (Math.log(v) - Math.log(xLo)) / (Math.log(xHi) - Math.log(xLo)) * pw; };
-    var ly = function (v) { return m.t + ph - (Math.log(v) - Math.log(yLo)) / (Math.log(yHi) - Math.log(yLo)) * ph; };
-
-    var s = '';
-
-    // recessive grid, hairline, solid
-    logTicks(yLo, yHi).forEach(function (v) {
-      s += '<line class="grid" x1="' + m.l + '" y1="' + ly(v).toFixed(1) + '" x2="' + (m.l + pw) + '" y2="' + ly(v).toFixed(1) + '"/>';
-      s += '<text class="axl" x="' + (m.l - 8) + '" y="' + (ly(v) + 3.5).toFixed(1) + '" text-anchor="end">' + fmtK(v) + '</text>';
-    });
-    logTicks(xLo, xHi).forEach(function (v) {
-      s += '<text class="axl" x="' + lx(v).toFixed(1) + '" y="' + (m.t + ph + 16) + '" text-anchor="middle">' + fmtK(v) + '</text>';
-    });
-    s += '<line class="axis" x1="' + m.l + '" y1="' + (m.t + ph) + '" x2="' + (m.l + pw) + '" y2="' + (m.t + ph) + '"/>';
-
-    // axis titles
-    s += '<text class="axl" x="' + (m.l + pw) + '" y="' + (m.t + ph + 30) + '" text-anchor="end">Sum insured</text>';
-    s += '<text class="axl" x="' + m.l + '" y="' + (m.t - 2) + '" text-anchor="start">Claim amount</text>';
-
-    // normal marks first, flagged on top so they are never buried
-    var flagged = [];
-    rows.forEach(function (r, i) {
-      var cx = lx(r.cover), cy = ly(r.amount);
-      r._x = cx; r._y = cy;
-      if (r.score >= thr) { flagged.push(r); return; }
-      s += '<circle class="dot" data-i="' + i + '" cx="' + cx.toFixed(1) + '" cy="' + cy.toFixed(1) + '" r="3.4"/>';
-    });
-    flagged.forEach(function (r) {
-      s += '<circle class="dot flag" data-i="' + rows.indexOf(r) + '" cx="' + r._x.toFixed(1) + '" cy="' + r._y.toFixed(1) + '" r="4.6"/>';
-    });
-
-    svg.innerHTML = s;
-    svg.setAttribute('aria-label',
-      'Scatter plot of claim amount against sum insured, 400 synthetic claims on logarithmic axes. ' +
-      flagged.length + ' claims score at or above the current threshold and are drawn in the flagged colour. ' +
-      'The same figures are available in the table below.');
-  }
-
-  /* -- histogram of scores, with the cut marked ------------------- */
-  function drawHist(svg, bins, thr, maxScore) {
-    var W = 320, H = 190;
-    var m = { t: 10, r: 8, b: 30, l: 36 };
-    var pw = W - m.l - m.r, ph = H - m.t - m.b;
-    var maxN = niceMax(Math.max.apply(null, bins.map(function (b) { return b.n; })) || 1);
-
-    var bx = function (v) { return m.l + (v / maxScore) * pw; };
-    var by = function (n) { return m.t + ph - (n / maxN) * ph; };
-
-    var s = '';
-    [0, 0.5, 1].forEach(function (f) {
-      var n = Math.round(maxN * f), y = by(n);
-      s += '<line class="grid" x1="' + m.l + '" y1="' + y.toFixed(1) + '" x2="' + (m.l + pw) + '" y2="' + y.toFixed(1) + '"/>';
-      s += '<text class="axl" x="' + (m.l - 7) + '" y="' + (y + 3.5).toFixed(1) + '" text-anchor="end">' + n + '</text>';
-    });
-
-    var bw = pw / bins.length;
-    bins.forEach(function (b, i) {
-      if (!b.n) return;
-      var x = m.l + i * bw + 1;            // 2px surface gap between neighbours
-      var w = Math.max(1, bw - 2);
-      var y = by(b.n), h = m.t + ph - y;
-      s += '<path class="bar' + (b.lo >= thr ? ' flag' : '') + '" data-b="' + i + '" d="' + barPath(x, y, w, h, 3) + '"/>';
-    });
-
-    s += '<line class="axis" x1="' + m.l + '" y1="' + (m.t + ph) + '" x2="' + (m.l + pw) + '" y2="' + (m.t + ph) + '"/>';
-    [0, 2, 4, 6].forEach(function (v) {
-      if (v > maxScore) return;
-      s += '<text class="axl" x="' + bx(v).toFixed(1) + '" y="' + (m.t + ph + 15) + '" text-anchor="middle">' + v + '</text>';
-    });
-    s += '<text class="axl" x="' + (m.l + pw) + '" y="' + (m.t + ph + 27) + '" text-anchor="end">Anomaly score (&#963;)</text>';
-
-    // the threshold annotation, direct-labelled
-    var tx = bx(thr);
-    s += '<line class="thr" x1="' + tx.toFixed(1) + '" y1="' + (m.t - 2) + '" x2="' + tx.toFixed(1) + '" y2="' + (m.t + ph) + '"/>';
-    var anchor = tx > m.l + pw - 60 ? 'end' : 'start';
-    var lxp = anchor === 'end' ? tx - 5 : tx + 5;
-    s += '<text class="thrlab" x="' + lxp.toFixed(1) + '" y="' + (m.t + 8) + '" text-anchor="' + anchor + '">cut at ' + thr.toFixed(2) + '</text>';
-
-    svg.innerHTML = s;
-  }
-
-  /* -- bin the scores --------------------------------------------- */
-  function binScores(rows, width, maxScore) {
-    var n = Math.ceil(maxScore / width), bins = [], i;
-    for (i = 0; i < n; i++) bins.push({ lo: i * width, hi: (i + 1) * width, n: 0 });
-    rows.forEach(function (r) {
-      var i = Math.min(bins.length - 1, Math.floor(r.score / width));
-      bins[i].n++;
-    });
-    return bins;
-  }
-
-  /* -- the table view, the non-visual path to the same data ------- */
-  function drawTable(body, rows, thr) {
-    var width = 0.5;
-    var maxScore = Math.ceil(Math.max.apply(null, rows.map(function (r) { return r.score; })) / width) * width;
-    var bins = binScores(rows, width, maxScore);
-    var total = rows.length;
-    body.innerHTML = bins.filter(function (b) { return b.n; }).map(function (b) {
-      var flagged = b.lo >= thr;
-      return '<tr>' +
-        '<td>' + b.lo.toFixed(2) + ' to ' + b.hi.toFixed(2) + '</td>' +
-        '<td>' + b.n + '</td>' +
-        '<td>' + (b.n / total * 100).toFixed(1) + '%</td>' +
-        '<td>' + (flagged ? 'Flagged' : 'Below threshold') + '</td>' +
-        '</tr>';
-    }).join('');
-  }
-
-  /* -- wire it all together --------------------------------------- */
-  (function demo() {
-    var scatter = $('#scatter');
-    var hist    = $('#hist');
-    var slider  = $('#thr');
-    if (!scatter || !hist || !slider) return;
-
-    CLAIMS = buildClaims();
-
-    var elThrv  = $('#thrv');
-    var elCount = $('#roCount');
-    var elRate  = $('#roRate');
+    var elPeak  = $('#roPeak');
+    var elShift = $('#roShift');
+    var elTotal = $('#roTotal');
+    var elVal   = $('#shiftv');
     var tblBody = $('#tblBody');
 
-    var maxScore = Math.ceil(Math.max.apply(null, CLAIMS.map(function (r) { return r.score; })) * 2) / 2;
-    var bins = binScores(CLAIMS, 0.25, maxScore);
-    var currentThr = 2.6;
+    var W = 560, H = 260, m = { t: 16, r: 16, b: 34, l: 42 };
+    var pw = W - m.l - m.r, ph = H - m.t - m.b;
+    var Y_MAX = 1.15;
+
+    var px = function (h) { return m.l + (h / 23) * pw; };
+    var py = function (v) { return m.t + ph - (v / Y_MAX) * ph; };
+
+    function linePath(arr) {
+      return arr.map(function (v, h) { return (h ? 'L' : 'M') + px(h).toFixed(1) + ',' + py(v).toFixed(1); }).join('');
+    }
+    function areaPath(arr) {
+      return linePath(arr) + 'L' + px(23).toFixed(1) + ',' + py(0).toFixed(1) +
+             'L' + px(0).toFixed(1) + ',' + py(0).toFixed(1) + 'Z';
+    }
 
     function render() {
-      var thr = parseInt(slider.value, 10) / 10;
-      currentThr = thr;
-      var flagged = CLAIMS.filter(function (r) { return r.score >= thr; }).length;
+      var share = parseInt(slider.value, 10) / 100;
+      var res = managed(share);
+      var curve = res.curve;
 
-      if (elThrv)  elThrv.innerHTML = thr.toFixed(2) + ' &sigma;';
-      if (elCount) elCount.innerHTML = flagged + '<small>claims</small>';
-      if (elRate)  elRate.innerHTML = (flagged / CLAIMS.length * 100).toFixed(1) + '<small>%</small>';
+      var basePeak = Math.max.apply(null, BASE);
+      var newPeak  = Math.max.apply(null, curve);
+      var baseSum  = BASE.reduce(function (a, b) { return a + b; }, 0);
+      var newSum   = curve.reduce(function (a, b) { return a + b; }, 0);
 
-      drawScatter(scatter, CLAIMS, thr);
-      drawHist(hist, bins, thr, maxScore);
-      if (tblBody) drawTable(tblBody, CLAIMS, thr);
+      if (elVal)   elVal.textContent = Math.round(share * 100) + '%';
+      if (elPeak)  elPeak.innerHTML  = ((1 - newPeak / basePeak) * 100).toFixed(1) + '<small>% lower</small>';
+      if (elShift) elShift.innerHTML = (res.moved / baseSum * 100).toFixed(1) + '<small>% of daily total</small>';
+      if (elTotal) elTotal.innerHTML = ((newSum - baseSum) / baseSum * 100).toFixed(1) + '<small>% change</small>';
+
+      var s = '';
+      // recessive grid, hairline and solid
+      [0, 0.25, 0.5, 0.75, 1.0].forEach(function (v) {
+        s += '<line class="grid" x1="' + m.l + '" y1="' + py(v).toFixed(1) + '" x2="' + (m.l + pw) + '" y2="' + py(v).toFixed(1) + '"/>';
+        s += '<text class="axl" x="' + (m.l - 8) + '" y="' + (py(v) + 3.5).toFixed(1) + '" text-anchor="end">' + v.toFixed(2) + '</text>';
+      });
+
+      s += '<path class="ar-1" d="' + areaPath(BASE) + '"/>';
+      s += '<path class="ln ln-1" d="' + linePath(BASE) + '"/>';
+      s += '<path class="ln ln-2" d="' + linePath(curve) + '"/>';
+
+      // a marker on each peak, ringed against the surface
+      var newPeakHour = curve.indexOf(newPeak);
+      s += '<circle class="mk mk-1" cx="' + px(18).toFixed(1) + '" cy="' + py(BASE[18]).toFixed(1) + '" r="4.5"/>';
+      s += '<circle class="mk mk-2" cx="' + px(newPeakHour).toFixed(1) + '" cy="' + py(newPeak).toFixed(1) + '" r="4.5"/>';
+
+      // one direct label only, on the story the chart is telling
+      if (share > 0.02) {
+        s += '<text class="dlab" x="' + (px(18) + 9).toFixed(1) + '" y="' + (py(BASE[18]) - 8).toFixed(1) + '">peak ' + ((1 - newPeak / basePeak) * 100).toFixed(0) + '% lower</text>';
+      }
+
+      s += '<line class="axis" x1="' + m.l + '" y1="' + (m.t + ph) + '" x2="' + (m.l + pw) + '" y2="' + (m.t + ph) + '"/>';
+      [0, 6, 12, 18, 23].forEach(function (h) {
+        var lab = h === 23 ? '23:00' : (h < 10 ? '0' + h : h) + ':00';
+        s += '<text class="axl" x="' + px(h).toFixed(1) + '" y="' + (m.t + ph + 16) + '" text-anchor="' + (h === 0 ? 'start' : h === 23 ? 'end' : 'middle') + '">' + lab + '</text>';
+      });
+      s += '<text class="axl" x="' + m.l + '" y="' + (m.t - 4) + '" text-anchor="start">Indexed load</text>';
+
+      svg.innerHTML = s;
+      svg.setAttribute('aria-label',
+        'Two daily load curves over 24 hours. The as-is curve peaks at 18:00 at an indexed load of 1.00. ' +
+        'With ' + Math.round(share * 100) + ' per cent of evening load shifted, the peak falls by ' +
+        ((1 - newPeak / basePeak) * 100).toFixed(1) + ' per cent while total daily energy changes by ' +
+        ((newSum - baseSum) / baseSum * 100).toFixed(1) + ' per cent. The same figures are in the table below.');
+
+      if (tblBody) {
+        tblBody.innerHTML = BASE.map(function (v, h) {
+          var d = curve[h] - v;
+          return '<tr><td>' + (h < 10 ? '0' + h : h) + ':00</td>' +
+                 '<td>' + v.toFixed(2) + '</td>' +
+                 '<td>' + curve[h].toFixed(2) + '</td>' +
+                 '<td>' + (d === 0 ? '0.00' : (d > 0 ? '+' : '') + d.toFixed(2)) + '</td></tr>';
+        }).join('');
+      }
     }
 
     slider.addEventListener('input', render);
     render();
-
-    /* hover: dots */
-    scatter.addEventListener('mousemove', function (ev) {
-      var t = ev.target;
-      if (!t || t.tagName !== 'circle') { hideTip(); return; }
-      var r = CLAIMS[parseInt(t.getAttribute('data-i'), 10)];
-      if (!r) return;
-      var flagged = r.score >= currentThr;
-      showTip(
-        '<b>' + esc(r.id) + '</b>' +
-        'Cover ' + fmtK(r.cover) + ' &middot; claim ' + fmtK(r.amount) + '<br>' +
-        'Ratio ' + (r.amount / r.cover).toFixed(2) + ' &middot; score ' + r.score.toFixed(2) + '&sigma;<br>' +
-        '<span>' + (flagged ? 'Flagged for review' : 'Within expected range') + '</span>',
-        ev.clientX, ev.clientY);
-    });
-    scatter.addEventListener('mouseleave', hideTip);
-
-    /* hover: histogram bars */
-    hist.addEventListener('mousemove', function (ev) {
-      var t = ev.target;
-      if (!t || t.getAttribute('data-b') === null) { hideTip(); return; }
-      var b = bins[parseInt(t.getAttribute('data-b'), 10)];
-      if (!b) return;
-      showTip(
-        '<b>Score ' + b.lo.toFixed(2) + ' to ' + b.hi.toFixed(2) + '</b>' +
-        b.n + ' claims &middot; ' + (b.n / CLAIMS.length * 100).toFixed(1) + '% of the book<br>' +
-        '<span>' + (b.lo >= currentThr ? 'At or above the cut' : 'Below the cut') + '</span>',
-        ev.clientX, ev.clientY);
-    });
-    hist.addEventListener('mouseleave', hideTip);
-    window.addEventListener('scroll', hideTip, { passive: true });
 
     /* table toggle */
     var tblBtn = $('#tblBtn'), tbl = $('#tbl');

@@ -1,60 +1,57 @@
 <!DOCTYPE html>
 <!--
   ══════════════════════════════════════════════════════════════════════
-  BRYAN OPOKU, DATA ANALYST
-  bryanspirit.github.io/data-analyst-portfolio
+  BRYAN OPOKU MAWUNYO KOFI
+  Strategy and research analyst, energy systems and development
+  https://bryanspirit.github.io/data-analyst-portfolio/
 
-  HOW TO ADD CONTENT
-    · New case study  → copy any <article class="rec"> block in section
-                        #records. Bump data-n, give the button a new
-                        aria-controls id, set data-cat to one of the
-                        filter values, and fill the five <dt>/<dd> rows.
-                        Filters pick up new categories automatically.
-    · New filter      → add a <button type="button" class="fbtn" data-f="yourcat">
-                        and use data-cat="yourcat" on the records.
-    · Toolkit         → section #toolkit. TRIM THIS to what you have
-                        actually used in anger, an interviewer will pick
-                        one at random.
-    · Numbers         → the stat tiles in the hero.
+  STILL TO FILL IN  (search for "TODO" in this file)
+    1. Star Assurance start date, currently shown as "Present" only
+    2. Years for the four research projects
+    3. Affiliation for the Tema Central energy study
+    4. Data type used in the GIZ programme (survey / secondary / administrative)
+    5. Languages beyond English
+    6. Which web-analytics tools you have actually used
 
   HOUSE RULE  No em dashes anywhere in this file, by request.
-  NOTE        The demo in #demo runs on synthetic data generated in the
-              browser. It is labelled as such on the page. Keep that
-              label if you change the demo.
+  HONESTY     The only figures shown anywhere are a labelled schematic in
+              the demand-side management panel. No research result is
+              represented by an invented number. Keep it that way.
   ══════════════════════════════════════════════════════════════════════
 -->
 <html lang="en">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Bryan Opoku, data analyst</title>
-<meta name="description" content="Bryan Opoku, data analyst in Accra, Ghana. Insurance claims analysis, fraud signals, customer segmentation, regulatory reporting and analytics dashboards.">
+<title>Bryan Opoku, strategy and research analyst</title>
+<meta name="description" content="Bryan Opoku Mawunyo Kofi. Strategy and research at the intersection of energy systems, development policy and applied analytics in the Global South. Accra, Ghana.">
 <meta name="color-scheme" content="light dark">
 <link rel="canonical" href="https://bryanspirit.github.io/data-analyst-portfolio/">
 
 <meta property="og:type" content="profile">
-<meta property="og:title" content="Bryan Opoku, data analyst">
-<meta property="og:description" content="Insurance claims analysis, fraud signals, customer segmentation and analytics dashboards. Accra, Ghana.">
+<meta property="og:title" content="Bryan Opoku, strategy and research analyst">
+<meta property="og:description" content="Energy systems, development policy and applied analytics in the Global South. Research in and on Ghanaian and African contexts.">
 <meta property="og:url" content="https://bryanspirit.github.io/data-analyst-portfolio/">
 <meta name="twitter:card" content="summary">
 
-<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='18' fill='%232a78d6'/><g fill='white'><rect x='24' y='54' width='12' height='24' rx='3'/><rect x='44' y='38' width='12' height='40' rx='3'/><rect x='64' y='24' width='12' height='54' rx='3'/></g></svg>">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%2310141a'/><g stroke='%23f97316' stroke-width='7' fill='none' stroke-linecap='round'><path d='M30 72 L46 44 L58 58 L72 28'/></g><circle cx='72' cy='28' r='7' fill='%23f97316'/></svg>">
 
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"Person","name":"Bryan Opoku Mawunyo Kofi",
  "alternateName":"Bryan Opoku",
- "jobTitle":"Data Analyst",
+ "jobTitle":"Strategy and Research Analyst, Energy Systems and Development",
  "email":"mailto:opokukofimawunyo@gmail.com",
  "url":"https://bryanspirit.github.io/data-analyst-portfolio/",
  "address":{"@type":"PostalAddress","addressLocality":"Accra","addressCountry":"GH"},
  "sameAs":["https://www.linkedin.com/in/bryan-opoku-837127208","https://github.com/Bryanspirit"],
- "knowsAbout":["Data analysis","SQL","Python","Insurance analytics","Anomaly detection","Customer segmentation","Data visualisation"],
+ "knowsAbout":["Energy systems","Energy access","Demand-side management","Development policy","Food security","Sovereign debt risk","Technology adoption","Systems thinking","Python","R","SQL","Power BI"],
+ "alumniOf":{"@type":"CollegeOrUniversity","name":"Koforidua Technical University"},
  "hasCredential":["BTech, Artificial Intelligence and Robotics","HND, Computer Science"]}
 </script>
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Inter:wght@400;500;600;650;700;750&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400..700;1,9..144,400..700&family=IBM+Plex+Mono:wght@400;500&family=Inter:wght@400;500;600;650;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="assets/css/style.css">
 </head>
 
@@ -64,12 +61,13 @@
 <!-- ════════════════════ header ════════════════════ -->
 <header class="bar">
   <div class="bar-in">
-    <a class="mark" href="#top">BRYAN OPOKU<i>.</i> <s>DATA ANALYST</s></a>
+    <a class="mark" href="#top">B. OPOKU<i>.</i> <s>STRATEGY &amp; RESEARCH</s></a>
     <nav class="bnav" aria-label="Sections">
-      <a href="#method" data-hide>Method</a>
-      <a href="#records">Work</a>
-      <a href="#demo" data-hide>Demo</a>
-      <a href="#toolkit" data-hide>Toolkit</a>
+      <a href="#approach" data-hide>Approach</a>
+      <a href="#systems">Systems</a>
+      <a href="#research">Research</a>
+      <a href="#experience" data-hide>Experience</a>
+      <a href="#skills" data-hide>Skills</a>
       <a href="#contact">Contact</a>
       <button type="button" class="theme" id="themeBtn" aria-label="Switch colour theme">
         <svg class="sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M2 12h2M20 12h2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M19.1 4.9l-1.4 1.4M6.3 17.7l-1.4 1.4"/></svg>
@@ -82,449 +80,664 @@
 <main id="main">
 <div id="top"></div>
 
-<!-- ════════════════════ hero ════════════════════ -->
+<!-- ════════════════════ hero band ════════════════════ -->
 <section class="hero" aria-label="Introduction">
+  <!-- grid-and-node motif: the electricity network, abstracted -->
+  <div class="hero-bg" aria-hidden="true">
+    <svg viewBox="0 0 1440 620" preserveAspectRatio="xMidYMid slice">
+      <defs>
+        <pattern id="gridp" width="60" height="60" patternUnits="userSpaceOnUse">
+          <path d="M60 0H0V60" fill="none" stroke="rgba(255,255,255,.055)" stroke-width="1"/>
+        </pattern>
+      </defs>
+      <rect width="1440" height="620" fill="url(#gridp)"/>
+      <g stroke="rgba(249,115,22,.30)" stroke-width="1.2" fill="none">
+        <path d="M900 120 L1080 240 L1020 420 L1200 500"/>
+        <path d="M1080 240 L1260 180"/>
+        <path d="M1020 420 L840 460"/>
+        <path d="M1260 180 L1380 300"/>
+      </g>
+      <g fill="#f97316">
+        <circle cx="900"  cy="120" r="4"   class="pulse" style="--pd:0s"/>
+        <circle cx="1080" cy="240" r="5.5" class="pulse" style="--pd:.7s"/>
+        <circle cx="1020" cy="420" r="4"   class="pulse" style="--pd:1.4s"/>
+        <circle cx="1260" cy="180" r="4"   class="pulse" style="--pd:2.1s"/>
+        <circle cx="1200" cy="500" r="3.5" class="pulse" style="--pd:2.8s"/>
+        <circle cx="840"  cy="460" r="3.5" class="pulse" style="--pd:3.5s"/>
+        <circle cx="1380" cy="300" r="3.5" class="pulse" style="--pd:4.2s"/>
+      </g>
+    </svg>
+  </div>
+  <div class="hero-glow" aria-hidden="true"></div>
+
   <div class="wrap">
-    <p class="avail rv"><i></i>Accra, Ghana &middot; GMT+0 &middot; open to work</p>
-    <h1 class="hname rv" style="--d:.05s">Bryan Opoku</h1>
-    <p class="hrole rv" style="--d:.1s">Data Analyst</p>
+    <p class="avail rv"><i></i>Accra, Ghana &middot; GMT &middot; available remotely from September 2026</p>
+    <h1 class="hname rv" style="--d:.05s">Bryan Opoku<br><em>Mawunyo Kofi</em></h1>
+    <div class="hroles rv" style="--d:.1s">
+      <span>Strategy &amp; research analyst</span>
+      <span>Energy systems &amp; development</span>
+      <span>Data analytics &amp; AI</span>
+    </div>
     <p class="hlede rv" style="--d:.15s">
-      I turn operational data into decisions people act on. Five years inside insurance,
-      banking and business operations systems, which means I have usually built the
-      pipeline the data arrives through as well as the analysis that comes out of it.
-      <b>I like problems that arrive with a number attached.</b>
+      I work at the intersection of energy systems, development policy and applied
+      analytics in the Global South. My research keeps returning to one question:
+      <b>why technically sound systems fail to deliver benefit at household and
+      community level</b>, and what would have to change for them to do so.
     </p>
     <div class="hbtns rv" style="--d:.2s">
       <button type="button" class="btn solid" id="copyMail" data-mail="opokukofimawunyo@gmail.com">
-        <span id="copyTxt">opokukofimawunyo@gmail.com</span><svg class="cpi" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="9" width="12" height="12" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+        <span id="copyTxt">opokukofimawunyo@gmail.com</span>
+        <svg class="cpi" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="9" width="12" height="12" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
       </button>
       <a class="btn" href="https://www.linkedin.com/in/bryan-opoku-837127208" rel="noopener">LinkedIn &#8599;</a>
-      <a class="btn" href="https://github.com/Bryanspirit" rel="noopener">GitHub &#8599;</a>
+      <a class="btn" href="#research">Selected research &#8595;</a>
       <span class="cnote" id="copyHint" role="status">Click the address to copy</span>
     </div>
 
     <dl class="tiles rv" style="--d:.25s">
-      <div class="tile"><dt>Experience</dt><dd>5<small>years in data and software</small></dd></div>
-      <div class="tile"><dt>Organisations</dt><dd>4<small>insurer, bank, consultancy, operator</small></dd></div>
-      <div class="tile"><dt>Primary domain</dt><dd>Insurance<small>claims, policy, reporting</small></dd></div>
-      <div class="tile"><dt>Base</dt><dd>Accra<small>GMT+0, remote friendly</small></dd></div>
+      <div class="tile"><dt>Research base</dt><dd>Accra<small>all substantive research in and on Ghanaian and African contexts</small></dd></div>
+      <div class="tile"><dt>Development partner</dt><dd>GIZ<small>quantitative analyst on a GIZ-linked programme</small></dd></div>
+      <div class="tile"><dt>Research programmes</dt><dd>4<small>energy, food security, sovereign risk, technology adoption</small></dd></div>
+      <div class="tile"><dt>Systems studied</dt><dd>3<small>electricity, national food supply, institutional adoption</small></dd></div>
     </dl>
   </div>
 </section>
 
-<!-- ════════════════════ method ════════════════════ -->
-<section id="method" aria-label="How I work">
+<!-- ════════════════════ approach ════════════════════ -->
+<section id="approach" aria-label="How I work">
   <div class="wrap">
-    <div class="shead rv"><span class="n">&sect; 01</span><span>Method</span><span class="line"></span><span>Five steps</span></div>
-    <h2 class="stitle rv">An analysis is only finished when a decision changes</h2>
+    <div class="shead rv"><span class="n">&sect; 01</span><span>Approach</span><span class="line"></span><span>Four moves</span></div>
+
+    <div class="prose2 rv">
+      <div>
+        <p class="lead">I work the same way across every problem, whether the subject is an electricity grid, a food system or a procurement reform.</p>
+        <p>Establish what is actually known and where the evidence stops. Map the system and the actors inside it. Run country and comparative analysis. Narrow to a defensible set of strategic choices.</p>
+      </div>
+      <div>
+        <p>I am comfortable with fragmented, contradictory and incomplete data, and with problems where the right question has not yet been settled. That last condition is the common one, and treating it as the first piece of work rather than an obstacle is most of the method.</p>
+        <p>Alongside this I bring a working analytical toolkit, Python, R, SQL, statistical modelling, machine learning and Power BI, which lets me interrogate primary data directly rather than relying on secondary literature alone, and <b>build analysis that outlives the engagement that produced it</b>.</p>
+      </div>
+    </div>
+
+    <!-- ── infographic 1: the method spine ── -->
+    <div class="panel rv" style="margin-bottom:52px">
+      <div class="panel-h"><b>How an engagement runs</b><span class="r">Each stage constrains the next</span></div>
+      <div style="padding:26px 22px 20px">
+        <svg class="plot flow" viewBox="0 0 1000 200" role="img"
+             aria-label="Four-stage flow: establish the evidence base, map the system, comparative analysis, then strategic choices. Each stage feeds the next, and findings loop back to the evidence base.">
+          <g class="fl-link">
+            <path d="M228 74 H262" marker-end="url(#ar)"/>
+            <path d="M478 74 H512" marker-end="url(#ar)"/>
+            <path d="M728 74 H762" marker-end="url(#ar)"/>
+            <path d="M880 112 V150 H120 V112" stroke-dasharray="5 5" marker-end="url(#ar)"/>
+          </g>
+          <defs>
+            <marker id="ar" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+              <path d="M0 0 L10 5 L0 10 z" fill="currentColor"/>
+            </marker>
+          </defs>
+          <g class="fl-step">
+            <rect x="20" y="36" width="208" height="76" rx="10"/>
+            <text class="fl-n" x="36" y="60">01</text>
+            <text class="fl-t" x="36" y="82">Establish what is known</text>
+            <text class="fl-s" x="36" y="99">and where the evidence stops</text>
+          </g>
+          <g class="fl-step">
+            <rect x="270" y="36" width="208" height="76" rx="10"/>
+            <text class="fl-n" x="286" y="60">02</text>
+            <text class="fl-t" x="286" y="82">Map the system</text>
+            <text class="fl-s" x="286" y="99">and the actors inside it</text>
+          </g>
+          <g class="fl-step">
+            <rect x="520" y="36" width="208" height="76" rx="10"/>
+            <text class="fl-n" x="536" y="60">03</text>
+            <text class="fl-t" x="536" y="82">Comparative analysis</text>
+            <text class="fl-s" x="536" y="99">country and longitudinal</text>
+          </g>
+          <g class="fl-step accent">
+            <rect x="770" y="36" width="210" height="76" rx="10"/>
+            <text class="fl-n" x="786" y="60">04</text>
+            <text class="fl-t" x="786" y="82">Strategic choices</text>
+            <text class="fl-s" x="786" y="99">a defensible, narrowed set</text>
+          </g>
+          <text class="fl-loop" x="500" y="172" text-anchor="middle">what the analysis could not answer returns to stage 01</text>
+        </svg>
+      </div>
+    </div>
+
+    <div class="shead rv"><span class="n">&sect; 02</span><span>What I bring</span><span class="line"></span><span>Seven</span></div>
+    <div class="caps">
+      <article class="cap rv"><span class="capn">01</span><h4>Country and comparative analysis</h4><p>Built a comparative sovereign risk framework across African economies from inconsistent national data, and ran longitudinal analysis on Ghanaian agricultural production against FAOSTAT and World Bank series.</p></article>
+      <article class="cap rv" style="--d:.05s"><span class="capn">02</span><h4>Ecosystem and stakeholder mapping</h4><p>Mapped the supplier, institutional and regulatory ecosystem behind procurement digitalisation in Ghana, identifying which actors determined whether the transition held or stalled.</p></article>
+      <article class="cap rv" style="--d:.1s"><span class="capn">03</span><h4>Evidence and knowledge gap analysis</h4><p>Designed a national food-security monitoring framework whose starting point was establishing what the available evidence could not answer.</p></article>
+      <article class="cap rv" style="--d:.15s"><span class="capn">04</span><h4>Systems-level synthesis</h4><p>Energy research connecting household behaviour to tariffs, appliance stock, weather, grid conditions and policy in a single explanatory model.</p></article>
+      <article class="cap rv" style="--d:.2s"><span class="capn">05</span><h4>Multi-stakeholder coordination</h4><p>Convened finance, operations, IT and management around a shared performance framework, in an organisation where each function measured the same things differently.</p></article>
+      <article class="cap rv" style="--d:.25s"><span class="capn">06</span><h4>Development-partner research</h4><p>Quantitative analyst on a GIZ-linked programme studying digital transformation in peri-urban Ghana, examining how infrastructure and institutional conditions produce uneven access outside major urban centres.</p></article>
+      <article class="cap rv" style="--d:.3s"><span class="capn">07</span><h4>Global South grounding</h4><p>Based in Accra, with all substantive research conducted in and on Ghanaian and African contexts, not observed from outside them.</p></article>
+      <article class="cap rv" style="--d:.35s"><span class="capn">08</span><h4>The toolkit underneath</h4><p>Python, R, SQL, statistical modelling, machine learning and Power BI. Enough to interrogate primary data directly rather than take secondary literature on trust.</p></article>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════════ systems map ════════════════════ -->
+<section id="systems" aria-label="The energy system model">
+  <div class="wrap">
+    <div class="shead rv"><span class="n">&sect; 03</span><span>Systems view</span><span class="line"></span><span>Interactive</span></div>
+    <h2 class="stitle rv">The household sits inside a system it did not <em>design</em></h2>
     <p class="slede rv">
-      A chart nobody acts on is a cost, not an output. So every piece of work below is
-      written the same way: the question that was asked, the data it had to survive,
-      the method, what came out, and what somebody did differently afterwards.
+      This is the explanatory model behind the Tema Central energy study: household
+      electricity behaviour connected to tariffs, appliance stock, income, weather and
+      grid conditions at once, with every one of those arrows set by decisions taken at
+      policy level. <b>Select any node to trace what it touches.</b>
     </p>
 
-    <div class="steps rv">
-      <div class="step">
-        <div class="sn">01</div>
-        <div>
-          <h4>Get the question in writing first</h4>
-          <p>Most requests arrive as "can you look at the claims data". That is not a question. I turn it into one that has an answer and an owner, because otherwise the analysis becomes an argument about impressions later.</p>
-        </div>
+    <!-- ── infographic 2: the interactive systems map ── -->
+    <div class="smap rv">
+      <div class="smap-fig">
+        <svg id="smap" viewBox="0 0 900 500" role="img"
+             aria-label="Systems map. Household energy behaviour at the centre, connected to tariff structure, appliance stock, household income, weather and season, grid conditions and information. All of it sits inside policy and system design.">
+          <rect class="frame" x="18" y="46" width="864" height="436" rx="16"/>
+          <text class="frame-l" x="42" y="34">Policy and system design</text>
+
+          <g id="edges">
+            <path class="ed" data-a="core" data-b="grid"      d="M450 262 H750"/>
+            <path class="ed" data-a="core" data-b="weather"   d="M450 262 L600 411"/>
+            <path class="ed" data-a="core" data-b="info"      d="M450 262 L300 411"/>
+            <path class="ed" data-a="core" data-b="tariff"    d="M450 262 H150"/>
+            <path class="ed" data-a="core" data-b="appliance" d="M450 262 L300 113"/>
+            <path class="ed" data-a="core" data-b="income"    d="M450 262 L600 113"/>
+            <path class="ed" data-a="appliance" data-b="income"  d="M300 113 H600"/>
+            <path class="ed" data-a="tariff"    data-b="info"    d="M150 262 L300 411"/>
+            <path class="ed" data-a="weather"   data-b="grid"    d="M600 411 L750 262"/>
+          </g>
+
+          <g class="nd core" data-node="core" tabindex="0" role="button" aria-label="Household energy behaviour">
+            <rect x="337" y="228" width="226" height="68" rx="11"/>
+            <text x="450" y="256" text-anchor="middle">Household energy</text>
+            <text x="450" y="278" text-anchor="middle">behaviour</text>
+          </g>
+          <g class="nd" data-node="tariff" tabindex="0" role="button" aria-label="Tariff structure">
+            <rect x="66" y="239" width="168" height="46" rx="9"/>
+            <text x="150" y="267" text-anchor="middle">Tariff structure</text>
+          </g>
+          <g class="nd" data-node="appliance" tabindex="0" role="button" aria-label="Appliance stock">
+            <rect x="216" y="90" width="168" height="46" rx="9"/>
+            <text x="300" y="118" text-anchor="middle">Appliance stock</text>
+          </g>
+          <g class="nd" data-node="income" tabindex="0" role="button" aria-label="Household income">
+            <rect x="516" y="90" width="168" height="46" rx="9"/>
+            <text x="600" y="118" text-anchor="middle">Household income</text>
+          </g>
+          <g class="nd" data-node="grid" tabindex="0" role="button" aria-label="Grid conditions">
+            <rect x="666" y="239" width="168" height="46" rx="9"/>
+            <text x="750" y="267" text-anchor="middle">Grid conditions</text>
+          </g>
+          <g class="nd" data-node="weather" tabindex="0" role="button" aria-label="Weather and season">
+            <rect x="516" y="388" width="168" height="46" rx="9"/>
+            <text x="600" y="416" text-anchor="middle">Weather and season</text>
+          </g>
+          <g class="nd" data-node="info" tabindex="0" role="button" aria-label="Information">
+            <rect x="216" y="388" width="168" height="46" rx="9"/>
+            <text x="300" y="416" text-anchor="middle">Information</text>
+          </g>
+        </svg>
       </div>
-      <div class="step">
-        <div class="sn">02</div>
-        <div>
-          <h4>Interrogate the data before trusting it</h4>
-          <p>Row counts against source systems, duplicates, missing periods, fields that changed meaning halfway through the history. Across the insurance work the data came from several business sources with different structures and different quality, so this step regularly took longer than the modelling.</p>
-        </div>
-      </div>
-      <div class="step">
-        <div class="sn">03</div>
-        <div>
-          <h4>Agree what "better" means before building</h4>
-          <p>A number or a test that both sides accept up front. The claims fraud work had no labelled fraud examples to score against, so the measure had to be agreed as silhouette score plus a business reading of what the model actually flagged, before a single model was trained.</p>
-        </div>
-      </div>
-      <div class="step">
-        <div class="sn">04</div>
-        <div>
-          <h4>Start with the boring baseline</h4>
-          <p>A pivot, a threshold, a simple rule. Sometimes that is the whole answer and everyone goes home early. When it is not, it becomes the number the clever method has to beat, which keeps the comparison honest.</p>
-        </div>
-      </div>
-      <div class="step">
-        <div class="sn">05</div>
-        <div>
-          <h4>Hand over something that keeps running</h4>
-          <p>A reusable pipeline instead of a monthly manual export, a dashboard the business reads without me in the room, and a written account of what the analysis cannot tell you. Stating the limits is part of the deliverable, not an apology for it.</p>
-        </div>
+      <div class="smap-side">
+        <p class="lbl" id="smLbl">The model</p>
+        <h3 id="smTitle">Six forces, one behaviour</h3>
+        <p id="smText">Household electricity use is usually described as a habit. It is better described as a rational response to six conditions the household does not control. Studying any one of them alone explains very little, which is why the study integrated appliance survey data, consumption records, tariff schedules, meteorological data and energy-sector information into a single picture.</p>
+        <p class="smap-hint">Select a node to trace its connections. Keyboard: tab to a node, then press enter.</p>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ════════════════════ records ════════════════════ -->
-<section id="records" aria-label="Selected analysis">
+<!-- ════════════════════ research ════════════════════ -->
+<section id="research" aria-label="Selected research and strategic projects">
   <div class="wrap">
-    <div class="shead rv"><span class="n">&sect; 02</span><span>Selected analysis</span><span class="line"></span><span>Expand a row</span></div>
-    <h2 class="stitle rv">Six pieces of work, read as analysis</h2>
+    <div class="shead rv"><span class="n">&sect; 04</span><span>Selected research</span><span class="line"></span><span>Four programmes</span></div>
+    <h2 class="stitle rv">Four systems, one recurring <em>failure mode</em></h2>
     <p class="slede rv">
-      Question, data, method, finding, decision. Where a result is commercially
-      sensitive the direction is given without the underlying figures, which is
-      the honest way to present it.
+      Electricity, food supply, sovereign finance and institutional technology adoption.
+      Different subjects, and in each the constraint that mattered turned out not to be
+      the technical one.
     </p>
 
-    <div class="filters rv" role="group" aria-label="Filter analysis by domain">
+    <div class="filters rv" role="group" aria-label="Filter research by theme">
       <span class="flabel">Filter</span>
       <button type="button" class="fbtn" data-f="all" aria-pressed="true">All</button>
-      <button type="button" class="fbtn" data-f="insurance" aria-pressed="false">Insurance</button>
-      <button type="button" class="fbtn" data-f="reporting" aria-pressed="false">Reporting</button>
-      <button type="button" class="fbtn" data-f="text" aria-pressed="false">Text analytics</button>
-      <button type="button" class="fbtn" data-f="operations" aria-pressed="false">Operations</button>
+      <button type="button" class="fbtn" data-f="energy" aria-pressed="false">Energy</button>
+      <button type="button" class="fbtn" data-f="food" aria-pressed="false">Food security</button>
+      <button type="button" class="fbtn" data-f="finance" aria-pressed="false">Development finance</button>
+      <button type="button" class="fbtn" data-f="adoption" aria-pressed="false">Technology adoption</button>
     </div>
-    <p class="cnote" id="filterCount" role="status" style="margin:-14px 0 22px">Showing all 6 records</p>
+    <p class="cnote" id="filterCount" role="status" style="margin:0 0 26px">Showing all 4 programmes</p>
 
-    <div class="records" data-acc>
+    <div class="dossiers">
 
-      <!-- ─────── record 01 ─────── -->
-      <article class="rec" data-cat="insurance">
-        <button type="button" class="rec-btn" aria-expanded="false" aria-controls="r1">
-          <span class="rec-n">R-01</span>
-          <span class="rec-t">
-            <h3>Fraud signals in claims data</h3>
-            <p>Star Assurance &middot; 2025 to 2026</p>
-          </span>
-          <span class="rec-tag">Insurance</span>
-          <span class="rec-tog" aria-hidden="true">+</span>
-        </button>
-        <div class="rec-body" id="r1"><div><div class="rec-in">
-          <dl class="qdm">
-            <div><dt>Question</dt><dd>Which claims are unusual enough to be worth a human reviewer's time, given that almost none of the historical claims were ever classified as fraudulent or clean?</dd></div>
-            <div><dt>Data</dt><dd>Claims records from the insurer's core systems, joined to policy and payment fields. The practical constraint was the one that shapes the whole problem: <b>no labelled fraud examples</b>, so nothing supervised was available and no accuracy figure could be quoted.</dd></div>
-            <div><dt>Method</dt><dd>
-              <ul>
-                <li>Feature preparation across claim, policy and payment fields, with the data quality checks done first</li>
-                <li>Three unsupervised approaches compared rather than one assumed: <b>Isolation Forest</b>, <b>clustering</b>, and <b>statistical anomaly detection</b></li>
-                <li>Evaluation agreed in advance as silhouette score, feature importance, and a business reading of what each method flagged</li>
-                <li>A confidence threshold set deliberately, because it decides how much review work the team receives</li>
-              </ul>
-            </dd></div>
-            <div><dt>Finding</dt><dd>
-              The strongest indicators of an unusual claim, in order:
-              <ol class="rank">
-                <li><span>01</span>Outstanding amount</li>
-                <li><span>02</span>Sum insured</li>
-                <li><span>03</span>Submitted claim amount</li>
-                <li><span>04</span>Paid amount</li>
-              </ol>
-              <p class="rank-note">Ranked by feature importance. Magnitudes withheld, commercially sensitive.</p>
-            </dd></div>
-            <div><dt>Decision</dt><dd>Claims review stopped being uniform and became risk ordered, with the threshold as the dial between missed cases and reviewer workload. The known limits were written down alongside it: scarce labels, patterns that shift over time, and a need for periodic retraining with expert review alongside the model rather than instead of it.</dd></div>
-            <div><dt>Tools</dt><dd><div class="chips"><span>Python</span><span>scikit-learn</span><span>pandas</span><span>SQL</span><span>PostgreSQL</span></div></dd></div>
-          </dl>
-        </div></div></div>
-      </article>
-
-      <!-- ─────── record 02 ─────── -->
-      <article class="rec" data-cat="insurance">
-        <button type="button" class="rec-btn" aria-expanded="false" aria-controls="r2">
-          <span class="rec-n">R-02</span>
-          <span class="rec-t">
-            <h3>Customer segmentation and cross sell</h3>
-            <p>Star Assurance &middot; 2025 to 2026</p>
-          </span>
-          <span class="rec-tag">Insurance</span>
-          <span class="rec-tog" aria-hidden="true">+</span>
-        </button>
-        <div class="rec-body" id="r2"><div><div class="rec-in">
-          <dl class="qdm">
-            <div><dt>Question</dt><dd>Which existing customers are a sensible target for a second product, and on what evidence, rather than on whoever the sales team happened to call last?</dd></div>
-            <div><dt>Data</dt><dd>Customer records integrated across policy, claims and engagement data held in separate business systems, each with its own structure and its own quality problems. Sensitive customer information throughout, so access was controlled and the analysis worked on what it was entitled to see.</dd></div>
-            <div><dt>Method</dt><dd>
-              <ul>
-                <li>Integration first: one customer view assembled from several sources before any analysis</li>
-                <li>Data driven segmentation rather than segments inherited from a slide deck</li>
-                <li>Machine learning to surface behaviour patterns and engagement opportunities across segments</li>
-                <li>Output shaped as decision support dashboards, so business users could read it without a technical team</li>
-              </ul>
-            </dd></div>
-            <div><dt>Finding</dt><dd>A clearer picture of how customers actually behave, and segments defined by observed behaviour instead of assumption. The useful part was not the model, it was that the same customer view became reusable for the next question asked.</dd></div>
-            <div><dt>Decision</dt><dd>Cross sell targeting moved onto the segmentation, and the dashboards became the standing reference the business reads rather than a report produced on request.</dd></div>
-            <div><dt>Tools</dt><dd><div class="chips"><span>Python</span><span>pandas</span><span>SQL</span><span>Dashboards</span></div></dd></div>
-          </dl>
-        </div></div></div>
-      </article>
-
-      <!-- ─────── record 03 ─────── -->
-      <article class="rec" data-cat="reporting">
-        <button type="button" class="rec-btn" aria-expanded="false" aria-controls="r3">
-          <span class="rec-n">R-03</span>
-          <span class="rec-t">
-            <h3>IFRS 17 reporting pipeline</h3>
-            <p>Star Assurance &middot; 2025 to 2026</p>
-          </span>
-          <span class="rec-tag">Reporting</span>
-          <span class="rec-tog" aria-hidden="true">+</span>
-        </button>
-        <div class="rec-body" id="r3"><div><div class="rec-in">
-          <dl class="qdm">
-            <div><dt>Question</dt><dd>Can insurance contract reporting under IFRS 17 be produced the same way every period, without a manual assembly step that nobody can reconstruct afterwards?</dd></div>
-            <div><dt>Data</dt><dd>Insurance contract data drawn from core systems. This is reporting that reaches a regulator, so the bar is different from an internal dashboard: every figure has to be traceable back to the record it came from.</dd></div>
-            <div><dt>Method</dt><dd>
-              <ul>
-                <li>Automated pipeline replacing the manual reporting routine</li>
-                <li>Migrations tested against a copy of production before they ran against it, because a bad one would have reached the regulator</li>
-                <li>Append only treatment of financial records, so a figure is never overwritten and the history survives</li>
-                <li>Data quality monitoring on the inputs, not only checks on the outputs</li>
-              </ul>
-            </dd></div>
-            <div><dt>Finding</dt><dd>The reporting effort moved from repeated manual work each period to a reviewed pipeline run, and, more usefully, the same numbers can be reproduced later on demand.</dd></div>
-            <div><dt>Decision</dt><dd>Reporting became a repeatable process with an audit trail rather than a periodic scramble, and the finance team's time moved from assembling figures to checking them.</dd></div>
-            <div><dt>Tools</dt><dd><div class="chips"><span>Python</span><span>SQL</span><span>PostgreSQL</span><span>Docker</span><span>CI/CD</span></div></dd></div>
-          </dl>
-        </div></div></div>
-      </article>
-
-      <!-- ─────── record 04 ─────── -->
-      <article class="rec" data-cat="text">
-        <button type="button" class="rec-btn" aria-expanded="false" aria-controls="r4">
-          <span class="rec-n">R-04</span>
-          <span class="rec-t">
-            <h3>Real time text analytics dashboard</h3>
-            <p>Pensive Global Consultancy &middot; freelance</p>
-          </span>
-          <span class="rec-tag">Text analytics</span>
-          <span class="rec-tog" aria-hidden="true">+</span>
-        </button>
-        <div class="rec-body" id="r4"><div><div class="rec-in">
-          <dl class="qdm">
-            <div><dt>Question</dt><dd>The team was reading text data through a manual report produced periodically. Could they see it as it arrived instead, and would that change anything they do?</dd></div>
-            <div><dt>Data</dt><dd>Text from inconsistent sources, which is where nearly all the difficulty sat. Unclear and inconsistent records, no shared format, and nothing usable until it had been cleaned and normalised.</dd></div>
-            <div><dt>Method</dt><dd>
-              <ul>
-                <li>ETL pipeline to collect and prepare the text for analysis</li>
-                <li>Cleaning and normalisation rules built for records that disagree with each other</li>
-                <li>NLP analysis layer producing the measures the team actually asked about</li>
-                <li>Grafana dashboard as the reading surface, shipped as one live chart first and grown from there</li>
-              </ul>
-            </dd></div>
-            <div><dt>Finding</dt><dd>The reporting lag was the real problem rather than the analysis. Once the pipeline ran continuously the same questions were answerable at the moment they were asked.</dd></div>
-            <div><dt>Decision</dt><dd>The periodic manual report was retired. The dashboard is the tool the team reads now, and it analyses data in real time rather than in arrears.</dd></div>
-            <div><dt>Tools</dt><dd><div class="chips"><span>Python</span><span>ETL</span><span>NLP</span><span>Grafana</span></div></dd></div>
-          </dl>
-        </div></div></div>
-      </article>
-
-      <!-- ─────── record 05 ─────── -->
-      <article class="rec" data-cat="operations">
-        <button type="button" class="rec-btn" aria-expanded="false" aria-controls="r5">
-          <span class="rec-n">R-05</span>
-          <span class="rec-t">
-            <h3>Stock movement reporting off spreadsheets</h3>
-            <p>Polaris Process &middot; 2026, contract</p>
-          </span>
-          <span class="rec-tag">Operations</span>
-          <span class="rec-tog" aria-hidden="true">+</span>
-        </button>
-        <div class="rec-body" id="r5"><div><div class="rec-in">
-          <dl class="qdm">
-            <div><dt>Question</dt><dd>Where does stock actually go, and why can nobody answer that from the spreadsheets currently in use?</dd></div>
-            <div><dt>Data</dt><dd>Inventory levels and stock movements previously tracked in spreadsheets. The failure mode is familiar: several copies, no movement history, and no way to reconstruct how a level reached its current value.</dd></div>
-            <div><dt>Method</dt><dd>
-              <ul>
-                <li>A movement history as the source of truth, with levels derived from it rather than typed in</li>
-                <li>Reporting built on that history, so any level can be traced back through the movements that produced it</li>
-                <li>Delivered end to end and handed over, including setup that works from a clean clone</li>
-              </ul>
-            </dd></div>
-            <div><dt>Finding</dt><dd>Once movements were recorded rather than levels overwritten, the questions the business could not previously answer became ordinary queries.</dd></div>
-            <div><dt>Decision</dt><dd>Stock movement, levels and reporting moved into one system and off spreadsheets, and the client runs it without me.</dd></div>
-            <div><dt>Tools</dt><dd><div class="chips"><span>SQL</span><span>Node.js</span><span>React</span><span>Reporting</span></div></dd></div>
-          </dl>
-        </div></div></div>
-      </article>
-
-      <!-- ─────── record 06 ─────── -->
-      <article class="rec" data-cat="operations">
-        <button type="button" class="rec-btn" aria-expanded="false" aria-controls="r6">
-          <span class="rec-n">R-06</span>
-          <span class="rec-t">
-            <h3>Transaction data that has to reconcile</h3>
-            <p>CT Core Solutions &middot; core banking</p>
-          </span>
-          <span class="rec-tag">Operations</span>
-          <span class="rec-tog" aria-hidden="true">+</span>
-        </button>
-        <div class="rec-body" id="r6"><div><div class="rec-in">
-          <dl class="qdm">
-            <div><dt>Question</dt><dd>What does it take for transaction data to be trustworthy enough that a reconciliation always balances, rather than usually balancing?</dd></div>
-            <div><dt>Data</dt><dd>Core banking transaction data, the setting where correctness is not negotiable and a discrepancy is not an interesting anomaly, it is a defect.</dd></div>
-            <div><dt>Method</dt><dd>
-              <ul>
-                <li>Backend services and data access for the core banking platform</li>
-                <li>Append only treatment of financial records: a state change is a new row, never an update in place</li>
-                <li>Reconciliation as a property the data model guarantees rather than a report that discovers problems late</li>
-              </ul>
-            </dd></div>
-            <div><dt>Finding</dt><dd>Most reconciliation problems are not analysis problems. They are recorded upstream, at the moment a row is overwritten instead of appended.</dd></div>
-            <div><dt>Decision</dt><dd>This is the rule I have carried into every dataset since. It is why the insurance reporting work treats financial records the same way.</dd></div>
-            <div><dt>Tools</dt><dd><div class="chips"><span>Java</span><span>Spring Boot</span><span>SQL</span></div></dd></div>
-          </dl>
-        </div></div></div>
-      </article>
-
-      <!-- ADD NEW RECORDS HERE. Copy a block above, bump R-0n, give the
-           body a new id, and set data-cat to a filter value. -->
-
-    </div>
-  </div>
-</section>
-
-<!-- ════════════════════ demo ════════════════════ -->
-<section id="demo" aria-label="Interactive demonstration">
-  <div class="wrap">
-    <div class="shead rv"><span class="n">&sect; 03</span><span>Worked example</span><span class="line"></span><span>Running in your browser</span></div>
-    <h2 class="stitle rv">The threshold is the decision, not the model</h2>
-    <p class="slede rv">
-      Anomaly detection does not tell you which claims are fraudulent. It ranks them, and
-      then somebody has to choose where to cut. That choice is a business decision about
-      how much review capacity exists, and this is the conversation I would rather have
-      with a stakeholder than a conversation about algorithms. Move the slider.
-    </p>
-
-    <div class="card demo rv">
-      <div class="demo-h">
-        <b>Claim review threshold explorer</b>
-        <span class="r">400 claims &middot; robust ratio score</span>
-      </div>
-
-      <div class="synth">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M12 9v4M12 17h.01M10.3 3.9 1.8 18a2 2 0 0 0 1.7 3h17a2 2 0 0 0 1.7-3L13.7 3.9a2 2 0 0 0-3.4 0z"/></svg>
-        <p style="margin:0"><b>Synthetic data.</b> These 400 claims are generated in your browser from a fixed seed. They are not Star Assurance data and no real figures are shown anywhere on this page. The purpose is to demonstrate the method and the tradeoff, nothing more.</p>
-      </div>
-
-      <div class="demo-b">
-        <!-- scatter -->
-        <div class="pane">
-          <div class="pane-h">
-            <h4>Claim amount against cover</h4>
-            <span>Flagged claims ringed</span>
+      <!-- ─────── 01 energy ─────── -->
+      <article class="dos rv" data-cat="energy">
+        <div class="dos-top">
+          <div>
+            <p class="dos-kick">Applied research study &middot; Tema Central, Ghana</p>
+            <h3>Household energy consumption and demand-side management</h3>
+            <!-- TODO year and affiliation -->
+            <p class="dos-meta">Urban Ghanaian context &middot; mixed-source analysis</p>
           </div>
-          <svg class="plot" id="scatter" viewBox="0 0 460 300" role="img"
-               aria-label="Scatter plot of claim amount against sum insured. Claims scoring above the threshold are flagged and drawn in the critical colour.">
-          </svg>
-          <div class="legend">
-            <span><i class="lk-normal"></i>Within expected range</span>
-            <span><i class="lk-flagged"></i>Flagged for review</span>
+          <span class="dos-num" aria-hidden="true">01</span>
+        </div>
+        <div class="dos-body">
+          <ul>
+            <li>Investigated household electricity consumption and energy-management behaviour, examining how <b>household characteristics, appliance ownership, tariff structures and weather conditions</b> interact to shape demand.</li>
+            <li>Integrated appliance survey data, consumption records, tariff schedules, meteorological data and energy-sector information into a single analytical picture, working across sources of differing quality and coverage.</li>
+            <li>Applied systems thinking to connect household-level behaviour to the wider technological, economic, environmental and policy conditions of Ghana's electricity system.</li>
+            <li>Built an analytical framework for evaluating household energy use and assessing demand-side interventions, producing evidence for decisions on efficiency and sustainable energy use.</li>
+          </ul>
+
+          <div class="finding">
+            <p class="lbl">Core finding</p>
+            <p>The binding constraint was rarely technical. Households responded rationally to tariffs, appliance stock and information they did not have. The gap sat between how the energy system was designed and how people actually live inside it.</p>
           </div>
-        </div>
 
-        <!-- score distribution + readouts -->
-        <div class="pane">
-          <div class="pane-h">
-            <h4>Where the cut falls</h4>
-            <span>Score distribution</span>
+          <!-- ── infographic 3: the DSM schematic ── -->
+          <div class="panel" style="margin-top:26px">
+            <div class="panel-h">
+              <b>What demand-side management actually moves</b>
+              <span class="r">Schematic &middot; drag the control</span>
+            </div>
+            <div class="synth">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M12 9v4M12 17h.01M10.3 3.9 1.8 18a2 2 0 0 0 1.7 3h17a2 2 0 0 0 1.7-3L13.7 3.9a2 2 0 0 0-3.4 0z"/></svg>
+              <p style="margin:0"><b>Schematic, not measured data.</b> This illustrates the mechanism a demand-side intervention relies on, using an idealised daily load shape. It is not consumption data from the Tema Central study and no research figure is shown here.</p>
+            </div>
+            <div class="panel-b">
+              <div class="pane">
+                <div class="pane-h"><h4>Daily load shape</h4><span>Evening peak, urban</span></div>
+                <svg class="plot" id="dsm" viewBox="0 0 560 260" role="img"
+                     aria-label="Two daily load curves over 24 hours. The as-is curve peaks in the evening. The managed curve moves part of that peak load into off-peak hours."></svg>
+                <div class="legend">
+                  <span><i class="lk-1"></i>As-is demand</span>
+                  <span><i class="lk-2"></i>With demand-side management</span>
+                </div>
+              </div>
+              <div class="pane">
+                <div class="pane-h"><h4>What changes</h4><span>At this setting</span></div>
+                <dl class="readout">
+                  <div><dt>Evening peak</dt><dd id="roPeak">0<small>% lower</small></dd></div>
+                  <div><dt>Load shifted</dt><dd id="roShift">0<small>% of daily total</small></dd></div>
+                  <div><dt>Total energy</dt><dd id="roTotal">0<small>% change</small></dd></div>
+                </dl>
+                <p class="cnote" style="margin:16px 0 0; line-height:1.55">
+                  Note the third figure. Demand-side management moves consumption, it does
+                  not by itself remove it. Which is exactly why the intervention has to be
+                  argued on peak capacity and tariff cost, not on energy saved.
+                </p>
+              </div>
+            </div>
+            <div class="ctrls">
+              <div class="ctrl">
+                <label for="shiftable">Shiftable evening load</label>
+                <input id="shiftable" type="range" min="0" max="60" step="1" value="30" aria-describedby="shiftHelp">
+                <span class="rval" id="shiftv">30%</span>
+              </div>
+              <p id="shiftHelp" class="cnote" style="margin:10px 0 0">
+                The share of evening peak load a household could move if the tariff signal,
+                the appliance and the information were all in place. In practice at least
+                one of the three usually is not.
+              </p>
+            </div>
+            <div class="tblwrap">
+              <button type="button" class="tbltog" id="tblBtn" aria-expanded="false" aria-controls="tbl">Show the numbers as a table</button>
+              <div id="tbl" hidden class="tblscroll">
+                <table class="dt">
+                  <caption>Indexed load by hour at the current setting. Schematic values, not measurements.</caption>
+                  <thead><tr><th scope="col">Hour</th><th scope="col">As-is</th><th scope="col">Managed</th><th scope="col">Change</th></tr></thead>
+                  <tbody id="tblBody"></tbody>
+                </table>
+              </div>
+            </div>
           </div>
-          <dl class="readout">
-            <div><dt>Flagged</dt><dd id="roCount">0<small>claims</small></dd></div>
-            <div><dt>Review load</dt><dd id="roRate">0<small>%</small></dd></div>
-          </dl>
-          <svg class="plot" id="hist" viewBox="0 0 320 190" role="img"
-               aria-label="Histogram of anomaly scores with a vertical line marking the current threshold. Bars to the right of the line are flagged.">
-          </svg>
-          <div class="legend">
-            <span><i class="lk-normal"></i>Below threshold</span>
-            <span><i class="lk-flagged"></i>At or above threshold</span>
+
+          <p class="relev"><b>Relevance</b> &nbsp;energy transition &middot; energy access &middot; demand-side management &middot; community-level evidence &middot; Ghana</p>
+        </div>
+      </article>
+
+      <!-- ─────── 02 food security ─────── -->
+      <article class="dos rv" data-cat="food">
+        <div class="dos-top">
+          <div>
+            <p class="dos-kick">Research and framework design &middot; Ghana</p>
+            <h3>Food security monitoring and agricultural systems</h3>
+            <p class="dos-meta">National scope &middot; tomato production as the entry point</p>
           </div>
+          <span class="dos-num" aria-hidden="true">02</span>
         </div>
-      </div>
+        <div class="dos-body">
+          <ul>
+            <li>Designed a data-driven framework for monitoring national food-security risk, focused initially on tomato production and production capacity.</li>
+            <li>Analysed the relationships between production, productivity, demand, supply, post-harvest loss, climate and food-security outcomes to identify <b>structural constraints rather than symptoms</b>.</li>
+            <li>Integrated national and international datasets, Ghana Statistical Service, Ghana StatBank, FAOSTAT and World Bank, running longitudinal and comparative analysis to surface trends and emerging risks.</li>
+            <li>Developed a food-security risk indicator framework and monitoring-platform architecture, translating agricultural and socio-economic evidence into insight usable in planning and policy.</li>
+          </ul>
 
-      <div class="ctrls">
-        <div class="ctrl">
-          <label for="thr">Review threshold</label>
-          <input id="thr" type="range" min="10" max="37" step="1" value="26"
-                 aria-describedby="thrHelp">
-          <span class="rval" id="thrv">2.60 &sigma;</span>
+          <!-- ── infographic 4: the food system causal chain ── -->
+          <div class="panel" style="margin-top:24px">
+            <div class="panel-h"><b>Where the losses actually occur</b><span class="r">The chain the framework monitors</span></div>
+            <div style="padding:24px 22px 18px">
+              <svg class="plot chain" viewBox="0 0 1000 230" role="img"
+                   aria-label="Causal chain: production capacity leads to production, then to post-harvest loss, then to available supply, which meets demand and determines the food security outcome. Climate acts on production and post-harvest loss from outside the chain.">
+                <g class="ch-link">
+                  <path d="M162 118 H196" marker-end="url(#ar2)"/>
+                  <path d="M330 118 H364" marker-end="url(#ar2)"/>
+                  <path d="M498 118 H532" marker-end="url(#ar2)"/>
+                  <path d="M666 118 H700" marker-end="url(#ar2)"/>
+                </g>
+                <defs><marker id="ar2" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 0 L10 5 L0 10 z" fill="currentColor"/></marker></defs>
+
+                <g class="ch-node"><rect x="14" y="92" width="148" height="52" rx="9"/><text x="88" y="123" text-anchor="middle">Production capacity</text></g>
+                <g class="ch-node"><rect x="196" y="92" width="134" height="52" rx="9"/><text x="263" y="123" text-anchor="middle">Production</text></g>
+                <g class="ch-node loss"><rect x="364" y="92" width="134" height="52" rx="9"/><text x="431" y="117" text-anchor="middle">Post-harvest</text><text x="431" y="133" text-anchor="middle">loss</text></g>
+                <g class="ch-node"><rect x="532" y="92" width="134" height="52" rx="9"/><text x="599" y="123" text-anchor="middle">Available supply</text></g>
+                <g class="ch-node out"><rect x="700" y="92" width="182" height="52" rx="9"/><text x="791" y="117" text-anchor="middle">Food security</text><text x="791" y="133" text-anchor="middle">outcome</text></g>
+
+                <g class="ch-ext">
+                  <rect x="364" y="12" width="134" height="42" rx="9"/>
+                  <text x="431" y="38" text-anchor="middle">Climate</text>
+                  <path d="M431 54 V88" marker-end="url(#ar2)"/>
+                  <path d="M364 33 H263 V88" marker-end="url(#ar2)"/>
+                </g>
+                <g class="ch-ext">
+                  <rect x="532" y="182" width="134" height="42" rx="9"/>
+                  <text x="599" y="208" text-anchor="middle">Demand</text>
+                  <path d="M599 182 V148" marker-end="url(#ar2)"/>
+                </g>
+                <text class="ch-note" x="431" y="176" text-anchor="middle">the stage most often measured last</text>
+              </svg>
+            </div>
+          </div>
+
+          <p class="relev"><b>Relevance</b> &nbsp;Global South development &middot; climate resilience &middot; multi-source evidence synthesis &middot; evidence gap analysis</p>
         </div>
-        <p id="thrHelp" class="cnote" style="margin:10px 0 0">
-          Score is how far a claim sits from the typical claim to cover relationship,
-          in robust standard deviations. Lower threshold, more claims reviewed.
-        </p>
-      </div>
+      </article>
 
-      <div class="tblwrap">
-        <button type="button" class="tbltog" id="tblBtn" aria-expanded="false" aria-controls="tbl">Show the numbers as a table</button>
-        <div id="tbl" hidden class="tblscroll">
-          <table class="dt">
-            <caption>Score distribution at the current threshold. Same data as the histogram.</caption>
-            <thead>
-              <tr><th scope="col">Score band</th><th scope="col">Claims</th><th scope="col">Share</th><th scope="col">State</th></tr>
-            </thead>
-            <tbody id="tblBody"></tbody>
-          </table>
+      <!-- ─────── 03 sovereign debt ─────── -->
+      <article class="dos rv" data-cat="finance">
+        <div class="dos-top">
+          <div>
+            <p class="dos-kick">Analytical architecture and concept design &middot; Africa</p>
+            <h3>Sovereign debt risk intelligence platform</h3>
+            <p class="dos-meta">Comparative across African economies</p>
+          </div>
+          <span class="dos-num" aria-hidden="true">03</span>
         </div>
-      </div>
+        <div class="dos-body">
+          <ul>
+            <li>Designed a framework for analysing and monitoring sovereign debt risk across African economies, combining macroeconomic indicators, predictive modelling and interactive visualisation.</li>
+            <li>Built a comparative risk view capable of identifying emerging vulnerabilities and comparing country-level conditions, applying <b>Random Forest, K-Means clustering and LSTM time-series models</b>.</li>
+            <li>Connected fiscal, economic, financial and structural indicators within a single systems view, delivered through a decision-support dashboard for policymakers and researchers.</li>
+          </ul>
 
-      <p class="demo-f">
-        Push the threshold down and the flagged count climbs faster than most people expect,
-        because the scores are not evenly spread. That curve, not the choice of algorithm,
-        is what decides whether a review team can live with the system.
-        <small>Synthetic claims, fixed seed &middot; robust z score on the claim to cover ratio &middot; not production data</small>
-      </p>
+          <!-- ── infographic 5: the analytical pipeline ── -->
+          <div class="panel" style="margin-top:24px">
+            <div class="panel-h"><b>From inconsistent national data to a comparable view</b><span class="r">Analytical architecture</span></div>
+            <div style="padding:24px 22px 18px">
+              <svg class="plot pipe" viewBox="0 0 1000 216" role="img"
+                   aria-label="Analytical pipeline: four indicator families feed a harmonisation layer, which feeds three model families, Random Forest for drivers, K-Means for country grouping and LSTM for trajectory, which together produce a comparative risk view in a decision-support dashboard.">
+                <defs><marker id="ar3" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 0 L10 5 L0 10 z" fill="currentColor"/></marker></defs>
+
+                <text class="pp-col" x="14" y="20">INDICATORS</text>
+                <g class="pp-in">
+                  <rect x="14" y="34" width="150" height="34" rx="7"/><text x="30" y="56">Fiscal</text>
+                  <rect x="14" y="76" width="150" height="34" rx="7"/><text x="30" y="98">Economic</text>
+                  <rect x="14" y="118" width="150" height="34" rx="7"/><text x="30" y="140">Financial</text>
+                  <rect x="14" y="160" width="150" height="34" rx="7"/><text x="30" y="182">Structural</text>
+                </g>
+                <g class="pp-link">
+                  <path d="M164 51 H196"/><path d="M164 93 H196"/>
+                  <path d="M164 135 H196"/><path d="M164 177 H196"/>
+                  <path d="M196 51 V177"/>
+                  <path d="M196 106 H228" marker-end="url(#ar3)"/>
+                </g>
+
+                <text class="pp-col" x="228" y="20">HARMONISE</text>
+                <g class="pp-mid"><rect x="228" y="76" width="160" height="60" rx="9"/><text x="308" y="100" text-anchor="middle">Comparable</text><text x="308" y="118" text-anchor="middle">country series</text></g>
+                <g class="pp-link">
+                  <path d="M388 106 H418"/>
+                  <path d="M418 58 V154"/>
+                  <path d="M418 58 H448"  marker-end="url(#ar3)"/>
+                  <path d="M418 106 H448" marker-end="url(#ar3)"/>
+                  <path d="M418 154 H448" marker-end="url(#ar3)"/>
+                </g>
+
+                <text class="pp-col" x="448" y="20">MODELS</text>
+                <g class="pp-mod">
+                  <rect x="448" y="36" width="230" height="44" rx="8"/><text x="466" y="56">Random Forest</text><text class="pp-s" x="466" y="71">which indicators drive risk</text>
+                  <rect x="448" y="84" width="230" height="44" rx="8"/><text x="466" y="104">K-Means clustering</text><text class="pp-s" x="466" y="119">which countries group together</text>
+                  <rect x="448" y="132" width="230" height="44" rx="8"/><text x="466" y="152">LSTM</text><text class="pp-s" x="466" y="167">where a trajectory is heading</text>
+                </g>
+                <g class="pp-link">
+                  <path d="M678 58 H708"/><path d="M678 106 H708"/><path d="M678 154 H708"/>
+                  <path d="M708 58 V154"/>
+                  <path d="M708 106 H738" marker-end="url(#ar3)"/>
+                </g>
+
+                <text class="pp-col" x="738" y="20">OUTPUT</text>
+                <g class="pp-out"><rect x="738" y="70" width="248" height="72" rx="10"/><text x="862" y="100" text-anchor="middle">Comparative risk view</text><text class="pp-s" x="862" y="120" text-anchor="middle">decision-support dashboard</text></g>
+              </svg>
+            </div>
+          </div>
+
+          <p class="relev"><b>Relevance</b> &nbsp;comparative country analysis &middot; systems thinking &middot; development finance &middot; decision-support design</p>
+        </div>
+      </article>
+
+      <!-- ─────── 04 procurement ─────── -->
+      <article class="dos rv" data-cat="adoption">
+        <div class="dos-top">
+          <div>
+            <p class="dos-kick">Quantitative research study &middot; Ghana</p>
+            <h3>Electronic procurement adoption</h3>
+            <p class="dos-meta">Supplier readiness, adoption and continuance</p>
+          </div>
+          <span class="dos-num" aria-hidden="true">04</span>
+        </div>
+        <div class="dos-body">
+          <ul>
+            <li>Researched readiness, adoption and continuance of electronic procurement among Ghanaian suppliers, examining <b>organisational, technological, institutional and behavioural drivers</b>.</li>
+            <li>Mapped the procurement ecosystem and analysed the barriers and enabling conditions determining whether a digital transition takes hold or stalls.</li>
+          </ul>
+
+          <div class="finding">
+            <p class="lbl">Why it belongs in an energy portfolio</p>
+            <p>The conditions that decide whether a procurement transition holds are the conditions that decide whether an energy transition holds. Both are institutional adoption problems wearing different technical clothing.</p>
+          </div>
+
+          <!-- ── infographic 6: the four-driver adoption frame ── -->
+          <div class="panel" style="margin-top:24px">
+            <div class="panel-h"><b>Four drivers, and where a transition stalls</b><span class="r">Adoption frame</span></div>
+            <div style="padding:24px 22px 20px">
+              <svg class="plot drv" viewBox="0 0 820 226" role="img"
+                   aria-label="Four adoption drivers, organisational, technological, institutional and behavioural, feed into a transition that either holds or stalls. The technological driver is rarely the deciding one.">
+                <defs><marker id="ar4" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 0 L10 5 L0 10 z" fill="currentColor"/></marker></defs>
+
+                <g class="dv-node">
+                  <rect x="10" y="8"   width="196" height="40" rx="9"/><text x="108" y="33"  text-anchor="middle">Organisational</text>
+                  <rect x="10" y="56"  width="196" height="40" rx="9"/><text x="108" y="81"  text-anchor="middle">Institutional</text>
+                  <rect x="10" y="104" width="196" height="40" rx="9"/><text x="108" y="129" text-anchor="middle">Behavioural</text>
+                </g>
+                <g class="dv-node soft">
+                  <rect x="10" y="152" width="196" height="40" rx="9"/><text x="108" y="177" text-anchor="middle">Technological</text>
+                </g>
+
+                <g class="dv-link">
+                  <path d="M206 28 H238"/><path d="M206 76 H238"/>
+                  <path d="M206 124 H238"/><path d="M206 172 H238"/>
+                  <path d="M238 28 V172"/>
+                  <path d="M238 100 H286" marker-end="url(#ar4)"/>
+                </g>
+
+                <g class="dv-gate"><rect x="286" y="76" width="180" height="48" rx="9"/><text x="376" y="106" text-anchor="middle">The transition</text></g>
+
+                <g class="dv-link">
+                  <path d="M466 100 H498"/>
+                  <path d="M498 58 V142"/>
+                  <path d="M498 58 H540"  marker-end="url(#ar4)"/>
+                  <path d="M498 142 H540" marker-end="url(#ar4)"/>
+                </g>
+                <g class="dv-node hold"><rect x="540" y="38" width="196" height="40" rx="9"/><text x="638" y="63" text-anchor="middle">Holds</text></g>
+                <g class="dv-node stall"><rect x="540" y="122" width="196" height="40" rx="9"/><text x="638" y="147" text-anchor="middle">Stalls</text></g>
+
+                <text class="dv-note" x="10" y="216">The technological driver is rarely the one that decides it. The other three are.</text>
+              </svg>
+            </div>
+          </div>
+
+          <p class="relev"><b>Relevance</b> &nbsp;technology adoption &middot; institutional readiness &middot; ecosystem mapping &middot; transition barriers</p>
+        </div>
+      </article>
+
     </div>
   </div>
 </section>
 
-<!-- ════════════════════ toolkit ════════════════════ -->
-<section id="toolkit" aria-label="Toolkit">
+<!-- ════════════════════ experience ════════════════════ -->
+<section id="experience" aria-label="Professional experience">
   <div class="wrap">
-    <div class="shead rv"><span class="n">&sect; 04</span><span>Toolkit</span><span class="line"></span><span>Working knowledge</span></div>
-    <h2 class="stitle rv">What I reach for</h2>
-    <p class="slede rv">
-      Listed by what it is for, not by logo. <!-- TRIM THIS LIST to what you have
-      actually used in anger. An interviewer will pick one at random and ask about it. -->
-    </p>
+    <div class="shead rv"><span class="n">&sect; 05</span><span>Experience</span><span class="line"></span><span>Four roles</span></div>
+    <h2 class="stitle rv">Where the work has been <em>done</em></h2>
 
+    <div class="tl rv">
+      <article class="job">
+        <div class="job-h">
+          <h3>Data Analytics Officer</h3>
+          <span class="job-org">Star Assurance Company Limited, Ghana</span>
+        </div>
+        <!-- TODO add the start date here -->
+        <p class="job-when">Present</p>
+        <ul>
+          <li>Conduct analysis and internal research identifying trends, performance gaps and operational constraints, producing the evidence base used in management decision-making.</li>
+          <li>Translate loosely defined business problems into structured research questions with business, operational, technical and management stakeholders. <b>This framing work determines whether the analysis is worth doing at all.</b></li>
+          <li>Designed and delivered the organisation's KPI and performance-management framework, coordinating conflicting definitions and requirements across finance, operations, IT and senior management into a single agreed measurement set.</li>
+          <li>Analyse business processes, information flows and datasets to surface inefficiencies, evidence gaps and quality issues, and recommend structural improvements.</li>
+          <li>Build and maintain ETL, reporting and analytical workflows in SQL, Python and Power BI, structuring data environments for operational, tactical and strategic reporting.</li>
+          <li>Communicate complex findings to non-technical decision-makers, and lead data governance work identifying inconsistencies, duplication and structural weaknesses across organisational data.</li>
+        </ul>
+      </article>
+
+      <article class="job">
+        <div class="job-h">
+          <h3>Research Assistant, Quantitative Analysis</h3>
+          <span class="job-org">Koforidua Technical University, Ghana</span>
+        </div>
+        <p class="job-when">October 2025 to March 2026</p>
+        <p class="job-note">Delivered in collaboration with GIZ</p>
+        <ul>
+          <li>Served as quantitative analyst on a research programme examining digital transformation in peri-urban Ghana.</li>
+          <li>Designed and analysed quantitative instruments measuring digital access, adoption and readiness across peri-urban households and enterprises.</li>
+          <li>Analysed how infrastructure, income and institutional conditions produce uneven access to digital services outside major urban centres, <b>an inequality pattern that closely mirrors energy access</b>.</li>
+          <li>Worked with academic and GIZ counterparts to translate findings into outputs usable by programme and policy stakeholders, bridging research and development-partner reporting requirements.</li>
+        </ul>
+      </article>
+
+      <article class="job">
+        <div class="job-h">
+          <h3>Digital Marketing and Analytics</h3>
+          <span class="job-org">Pensive Global Consultancy, Ghana</span>
+        </div>
+        <p class="job-when">January 2025 to October 2025</p>
+        <ul>
+          <li>Planned, launched and optimised paid-search campaigns end to end, linking campaign performance data directly to reporting so that budget and targeting decisions were made on evidence rather than instinct.</li>
+          <li>Applied machine-learning methods to campaign and audience data to improve targeting and allocation decisions.</li>
+          <li>Designed repeatable reporting and analytics workflows that removed manual effort and gave stakeholders a faster, clearer view of results.</li>
+          <li>Translated analytics findings into plain-language recommendations non-technical decision-makers could act on with confidence, <b>consistently the point at which analysis either changes a decision or does not</b>.</li>
+        </ul>
+      </article>
+
+      <article class="job">
+        <div class="job-h">
+          <h3>Data Systems</h3>
+          <span class="job-org">Push-Link Consult, Ghana</span>
+        </div>
+        <p class="job-when">November 2023 to October 2024</p>
+        <ul>
+          <li>Designed and built data pipelines consolidating information from multiple sources into clean, consistent and reusable datasets.</li>
+          <li>Automated repetitive data-processing tasks in Python, cutting manual handling and reducing duplication and error across records.</li>
+          <li>Partnered with cross-functional teams to align data flows with actual business use, improving the reliability of downstream reporting.</li>
+        </ul>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════════ skills ════════════════════ -->
+<section id="skills" aria-label="Methods and technical skills">
+  <div class="wrap">
+    <div class="shead rv"><span class="n">&sect; 06</span><span>Research methods</span><span class="line"></span></div>
+    <div class="kw rv">
+      <span>Quantitative research</span><span>Qualitative research</span><span>Mixed methods</span>
+      <span>Desk research and literature review</span><span>Survey and questionnaire design</span>
+      <span>Statistical analysis</span><span>Comparative analysis</span><span>Longitudinal analysis</span>
+      <span>Case study research</span><span>Evidence synthesis</span><span>Digital and web analytics</span>
+      <span>Research framework development</span><span>Monitoring and evaluation</span>
+    </div>
+
+    <div class="shead rv" style="margin-top:60px"><span class="n">&sect; 07</span><span>Technical</span><span class="line"></span><span>Six areas</span></div>
     <div class="cols c3 rv">
       <div class="cell">
-        <h4>Querying and shaping</h4>
-        <ul>
-          <li><b>SQL</b>, joins, window functions, query tuning against real volumes</li>
-          <li><b>PostgreSQL</b>, schema design and migrations</li>
-          <li><b>Python</b> with pandas and NumPy for the work SQL is awkward at</li>
-          <li><b>ETL pipelines</b>, scheduled rather than run by hand</li>
-        </ul>
+        <h4>Analysis and programming</h4>
+        <div class="chips"><span>Python</span><span>Pandas</span><span>NumPy</span><span>Scikit-learn</span><span>R</span><span>SQL / T-SQL</span><span>SPSS</span><span>Excel</span></div>
       </div>
       <div class="cell">
-        <h4>Analysis and modelling</h4>
-        <ul>
-          <li><b>Exploratory analysis</b>, distributions and outliers before conclusions</li>
-          <li><b>Anomaly detection</b>, Isolation Forest, clustering, statistical methods</li>
-          <li><b>Segmentation</b> and customer behaviour analysis</li>
-          <li><b>scikit-learn</b> for the modelling, with evaluation agreed first</li>
-        </ul>
+        <h4>Machine learning and AI</h4>
+        <div class="chips"><span>Random Forest</span><span>K-Means</span><span>LSTM</span><span>TensorFlow / Keras</span><span>NLP</span><span>Whisper</span><span>Feature engineering</span><span>Model evaluation</span></div>
       </div>
       <div class="cell">
-        <h4>Communicating it</h4>
-        <ul>
-          <li><b>Grafana</b> dashboards over live pipelines</li>
-          <li><b>Decision support dashboards</b> business users read unaided</li>
-          <li><b>Data quality monitoring</b> on inputs, so a broken chart is caught early</li>
-          <li><b>Git, Docker, CI/CD</b>, because analysis that cannot be rerun is a one off</li>
-        </ul>
+        <h4>Visualisation and BI</h4>
+        <div class="chips"><span>Power BI</span><span>DAX</span><span>KPI dashboards</span><span>Analytical reporting</span></div>
+      </div>
+      <div class="cell">
+        <h4>Web and digital analytics</h4>
+        <!-- TODO add only the tools you have actually used: GA4, Tag Manager, Search Console, Looker Studio -->
+        <div class="chips"><span>Google Ads / SEM</span><span>Campaign performance analysis</span><span>Conversion tracking</span><span>A/B testing</span></div>
+      </div>
+      <div class="cell">
+        <h4>Data engineering</h4>
+        <div class="chips"><span>ETL design</span><span>Data warehousing</span><span>Apache Airflow</span><span>PySpark</span><span>dbt</span><span>PostgreSQL</span><span>MySQL</span><span>SQL Server</span></div>
+      </div>
+      <div class="cell">
+        <h4>Development</h4>
+        <div class="chips"><span>Git</span><span>Docker</span><span>REST APIs</span><span>FastAPI</span><span>Flask</span><span>React</span></div>
       </div>
     </div>
 
-    <div class="shead rv" style="margin-top:56px"><span class="n">&sect; 05</span><span>Education</span><span class="line"></span></div>
+    <div class="shead rv" style="margin-top:60px"><span class="n">&sect; 08</span><span>Education</span><span class="line"></span></div>
     <div class="edu rv">
       <article class="edu-row">
         <span>Degree</span>
-        <div><h3>BTech, Artificial Intelligence and Robotics</h3><p>Bachelor of Technology</p></div>
+        <div>
+          <h3>B.Tech, Artificial Intelligence and Robotics</h3>
+          <p class="when">Koforidua Technical University &middot; January 2023 to December 2025</p>
+          <p>Grounding in machine learning, intelligent systems and applied computation, which underpins the predictive and systems-modelling work in my research.</p>
+        </div>
       </article>
       <article class="edu-row">
         <span>Diploma</span>
-        <div><h3>HND, Computer Science</h3><p>Higher National Diploma</p></div>
+        <div>
+          <h3>HND, Computer Science</h3>
+          <p class="when">Koforidua Technical University &middot; January 2021 to December 2023</p>
+        </div>
       </article>
+      <article class="edu-row">
+        <span>Languages</span>
+        <!-- TODO add Twi, Ewe, Ga, French or others. Fieldwork languages matter here. -->
+        <div><h3>English, fluent</h3></div>
+      </article>
+    </div>
+
+    <div class="ticker rv" aria-label="Research interests">
+      <div class="ticker-in">
+        <span><i>&#9670;</i>Inclusive renewable energy transitions<i>&#9670;</i>Energy access and energy justice<i>&#9670;</i>Demand-side management<i>&#9670;</i>Climate and development<i>&#9670;</i>Food security and agricultural systems<i>&#9670;</i>AI and data for social impact<i>&#9670;</i>Evidence-based development policy<i>&#9670;</i>Systems thinking</span>
+        <span aria-hidden="true"><i>&#9670;</i>Inclusive renewable energy transitions<i>&#9670;</i>Energy access and energy justice<i>&#9670;</i>Demand-side management<i>&#9670;</i>Climate and development<i>&#9670;</i>Food security and agricultural systems<i>&#9670;</i>AI and data for social impact<i>&#9670;</i>Evidence-based development policy<i>&#9670;</i>Systems thinking</span>
+      </div>
     </div>
   </div>
 </section>
@@ -532,17 +745,19 @@
 <!-- ════════════════════ contact ════════════════════ -->
 <section id="contact" aria-label="Contact">
   <div class="wrap">
-    <div class="shead rv"><span class="n">&sect; 06</span><span>Contact</span><span class="line"></span></div>
+    <div class="shead rv"><span class="n">&sect; 09</span><span>Contact</span><span class="line"></span></div>
     <div class="contact rv">
-      <h3>Let's talk</h3>
+      <h3>Available for remote engagement from September 2026</h3>
       <p>
-        Open to data analyst roles, contract work and freelance engagements, remote or
-        on site in Accra. If you have a question with a number attached to it, I would
-        like to hear about it.
+        Open to strategy and research roles in energy transition, energy access and
+        development policy, with development partners, research institutions and
+        mission-driven organisations. Based in Accra, working across Ghanaian and
+        African contexts.
       </p>
-      <div class="hbtns" style="margin-top:26px">
+      <div class="hbtns" style="margin-top:28px">
         <button type="button" class="btn solid" id="copyMail2" data-mail="opokukofimawunyo@gmail.com">
-          <span id="copyTxt2">opokukofimawunyo@gmail.com</span><svg class="cpi" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="9" width="12" height="12" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+          <span id="copyTxt2">opokukofimawunyo@gmail.com</span>
+          <svg class="cpi" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="9" width="12" height="12" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
         </button>
         <a class="btn" href="https://www.linkedin.com/in/bryan-opoku-837127208" rel="noopener">LinkedIn &#8599;</a>
         <a class="btn" href="https://bryanspirit.github.io" rel="noopener">AI and software portfolio &#8599;</a>
@@ -551,7 +766,7 @@
 
     <div class="foot">
       <span>Bryan Opoku Mawunyo Kofi, 2026</span>
-      <span><a href="https://github.com/Bryanspirit">GitHub</a> &middot; <a href="https://www.linkedin.com/in/bryan-opoku-837127208">LinkedIn</a> &middot; <a href="https://bryanspirit.github.io">bryanspirit.github.io</a></span>
+      <span><a href="https://github.com/Bryanspirit">GitHub</a> &middot; <a href="https://www.linkedin.com/in/bryan-opoku-837127208">LinkedIn</a> &middot; Accra, Ghana</span>
     </div>
   </div>
 </section>
