@@ -1,0 +1,564 @@
+<!DOCTYPE html>
+<!--
+  ══════════════════════════════════════════════════════════════════════
+  BRYAN OPOKU, DATA ANALYST
+  bryanspirit.github.io/data-analyst-portfolio
+
+  HOW TO ADD CONTENT
+    · New case study  → copy any <article class="rec"> block in section
+                        #records. Bump data-n, give the button a new
+                        aria-controls id, set data-cat to one of the
+                        filter values, and fill the five <dt>/<dd> rows.
+                        Filters pick up new categories automatically.
+    · New filter      → add a <button type="button" class="fbtn" data-f="yourcat">
+                        and use data-cat="yourcat" on the records.
+    · Toolkit         → section #toolkit. TRIM THIS to what you have
+                        actually used in anger, an interviewer will pick
+                        one at random.
+    · Numbers         → the stat tiles in the hero.
+
+  HOUSE RULE  No em dashes anywhere in this file, by request.
+  NOTE        The demo in #demo runs on synthetic data generated in the
+              browser. It is labelled as such on the page. Keep that
+              label if you change the demo.
+  ══════════════════════════════════════════════════════════════════════
+-->
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Bryan Opoku, data analyst</title>
+<meta name="description" content="Bryan Opoku, data analyst in Accra, Ghana. Insurance claims analysis, fraud signals, customer segmentation, regulatory reporting and analytics dashboards.">
+<meta name="color-scheme" content="light dark">
+<link rel="canonical" href="https://bryanspirit.github.io/data-analyst-portfolio/">
+
+<meta property="og:type" content="profile">
+<meta property="og:title" content="Bryan Opoku, data analyst">
+<meta property="og:description" content="Insurance claims analysis, fraud signals, customer segmentation and analytics dashboards. Accra, Ghana.">
+<meta property="og:url" content="https://bryanspirit.github.io/data-analyst-portfolio/">
+<meta name="twitter:card" content="summary">
+
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='18' fill='%232a78d6'/><g fill='white'><rect x='24' y='54' width='12' height='24' rx='3'/><rect x='44' y='38' width='12' height='40' rx='3'/><rect x='64' y='24' width='12' height='54' rx='3'/></g></svg>">
+
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"Person","name":"Bryan Opoku Mawunyo Kofi",
+ "alternateName":"Bryan Opoku",
+ "jobTitle":"Data Analyst",
+ "email":"mailto:opokukofimawunyo@gmail.com",
+ "url":"https://bryanspirit.github.io/data-analyst-portfolio/",
+ "address":{"@type":"PostalAddress","addressLocality":"Accra","addressCountry":"GH"},
+ "sameAs":["https://www.linkedin.com/in/bryan-opoku-837127208","https://github.com/Bryanspirit"],
+ "knowsAbout":["Data analysis","SQL","Python","Insurance analytics","Anomaly detection","Customer segmentation","Data visualisation"],
+ "hasCredential":["BTech, Artificial Intelligence and Robotics","HND, Computer Science"]}
+</script>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Inter:wght@400;500;600;650;700;750&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/style.css">
+</head>
+
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<!-- ════════════════════ header ════════════════════ -->
+<header class="bar">
+  <div class="bar-in">
+    <a class="mark" href="#top">BRYAN OPOKU<i>.</i> <s>DATA ANALYST</s></a>
+    <nav class="bnav" aria-label="Sections">
+      <a href="#method" data-hide>Method</a>
+      <a href="#records">Work</a>
+      <a href="#demo" data-hide>Demo</a>
+      <a href="#toolkit" data-hide>Toolkit</a>
+      <a href="#contact">Contact</a>
+      <button type="button" class="theme" id="themeBtn" aria-label="Switch colour theme">
+        <svg class="sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M2 12h2M20 12h2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M19.1 4.9l-1.4 1.4M6.3 17.7l-1.4 1.4"/></svg>
+        <svg class="moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg>
+      </button>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+<div id="top"></div>
+
+<!-- ════════════════════ hero ════════════════════ -->
+<section class="hero" aria-label="Introduction">
+  <div class="wrap">
+    <p class="avail rv"><i></i>Accra, Ghana &middot; GMT+0 &middot; open to work</p>
+    <h1 class="hname rv" style="--d:.05s">Bryan Opoku</h1>
+    <p class="hrole rv" style="--d:.1s">Data Analyst</p>
+    <p class="hlede rv" style="--d:.15s">
+      I turn operational data into decisions people act on. Five years inside insurance,
+      banking and business operations systems, which means I have usually built the
+      pipeline the data arrives through as well as the analysis that comes out of it.
+      <b>I like problems that arrive with a number attached.</b>
+    </p>
+    <div class="hbtns rv" style="--d:.2s">
+      <button type="button" class="btn solid" id="copyMail" data-mail="opokukofimawunyo@gmail.com">
+        <span id="copyTxt">opokukofimawunyo@gmail.com</span><svg class="cpi" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="9" width="12" height="12" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+      </button>
+      <a class="btn" href="https://www.linkedin.com/in/bryan-opoku-837127208" rel="noopener">LinkedIn &#8599;</a>
+      <a class="btn" href="https://github.com/Bryanspirit" rel="noopener">GitHub &#8599;</a>
+      <span class="cnote" id="copyHint" role="status">Click the address to copy</span>
+    </div>
+
+    <dl class="tiles rv" style="--d:.25s">
+      <div class="tile"><dt>Experience</dt><dd>5<small>years in data and software</small></dd></div>
+      <div class="tile"><dt>Organisations</dt><dd>4<small>insurer, bank, consultancy, operator</small></dd></div>
+      <div class="tile"><dt>Primary domain</dt><dd>Insurance<small>claims, policy, reporting</small></dd></div>
+      <div class="tile"><dt>Base</dt><dd>Accra<small>GMT+0, remote friendly</small></dd></div>
+    </dl>
+  </div>
+</section>
+
+<!-- ════════════════════ method ════════════════════ -->
+<section id="method" aria-label="How I work">
+  <div class="wrap">
+    <div class="shead rv"><span class="n">&sect; 01</span><span>Method</span><span class="line"></span><span>Five steps</span></div>
+    <h2 class="stitle rv">An analysis is only finished when a decision changes</h2>
+    <p class="slede rv">
+      A chart nobody acts on is a cost, not an output. So every piece of work below is
+      written the same way: the question that was asked, the data it had to survive,
+      the method, what came out, and what somebody did differently afterwards.
+    </p>
+
+    <div class="steps rv">
+      <div class="step">
+        <div class="sn">01</div>
+        <div>
+          <h4>Get the question in writing first</h4>
+          <p>Most requests arrive as "can you look at the claims data". That is not a question. I turn it into one that has an answer and an owner, because otherwise the analysis becomes an argument about impressions later.</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="sn">02</div>
+        <div>
+          <h4>Interrogate the data before trusting it</h4>
+          <p>Row counts against source systems, duplicates, missing periods, fields that changed meaning halfway through the history. Across the insurance work the data came from several business sources with different structures and different quality, so this step regularly took longer than the modelling.</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="sn">03</div>
+        <div>
+          <h4>Agree what "better" means before building</h4>
+          <p>A number or a test that both sides accept up front. The claims fraud work had no labelled fraud examples to score against, so the measure had to be agreed as silhouette score plus a business reading of what the model actually flagged, before a single model was trained.</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="sn">04</div>
+        <div>
+          <h4>Start with the boring baseline</h4>
+          <p>A pivot, a threshold, a simple rule. Sometimes that is the whole answer and everyone goes home early. When it is not, it becomes the number the clever method has to beat, which keeps the comparison honest.</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="sn">05</div>
+        <div>
+          <h4>Hand over something that keeps running</h4>
+          <p>A reusable pipeline instead of a monthly manual export, a dashboard the business reads without me in the room, and a written account of what the analysis cannot tell you. Stating the limits is part of the deliverable, not an apology for it.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════════ records ════════════════════ -->
+<section id="records" aria-label="Selected analysis">
+  <div class="wrap">
+    <div class="shead rv"><span class="n">&sect; 02</span><span>Selected analysis</span><span class="line"></span><span>Expand a row</span></div>
+    <h2 class="stitle rv">Six pieces of work, read as analysis</h2>
+    <p class="slede rv">
+      Question, data, method, finding, decision. Where a result is commercially
+      sensitive the direction is given without the underlying figures, which is
+      the honest way to present it.
+    </p>
+
+    <div class="filters rv" role="group" aria-label="Filter analysis by domain">
+      <span class="flabel">Filter</span>
+      <button type="button" class="fbtn" data-f="all" aria-pressed="true">All</button>
+      <button type="button" class="fbtn" data-f="insurance" aria-pressed="false">Insurance</button>
+      <button type="button" class="fbtn" data-f="reporting" aria-pressed="false">Reporting</button>
+      <button type="button" class="fbtn" data-f="text" aria-pressed="false">Text analytics</button>
+      <button type="button" class="fbtn" data-f="operations" aria-pressed="false">Operations</button>
+    </div>
+    <p class="cnote" id="filterCount" role="status" style="margin:-14px 0 22px">Showing all 6 records</p>
+
+    <div class="records" data-acc>
+
+      <!-- ─────── record 01 ─────── -->
+      <article class="rec" data-cat="insurance">
+        <button type="button" class="rec-btn" aria-expanded="false" aria-controls="r1">
+          <span class="rec-n">R-01</span>
+          <span class="rec-t">
+            <h3>Fraud signals in claims data</h3>
+            <p>Star Assurance &middot; 2025 to 2026</p>
+          </span>
+          <span class="rec-tag">Insurance</span>
+          <span class="rec-tog" aria-hidden="true">+</span>
+        </button>
+        <div class="rec-body" id="r1"><div><div class="rec-in">
+          <dl class="qdm">
+            <div><dt>Question</dt><dd>Which claims are unusual enough to be worth a human reviewer's time, given that almost none of the historical claims were ever classified as fraudulent or clean?</dd></div>
+            <div><dt>Data</dt><dd>Claims records from the insurer's core systems, joined to policy and payment fields. The practical constraint was the one that shapes the whole problem: <b>no labelled fraud examples</b>, so nothing supervised was available and no accuracy figure could be quoted.</dd></div>
+            <div><dt>Method</dt><dd>
+              <ul>
+                <li>Feature preparation across claim, policy and payment fields, with the data quality checks done first</li>
+                <li>Three unsupervised approaches compared rather than one assumed: <b>Isolation Forest</b>, <b>clustering</b>, and <b>statistical anomaly detection</b></li>
+                <li>Evaluation agreed in advance as silhouette score, feature importance, and a business reading of what each method flagged</li>
+                <li>A confidence threshold set deliberately, because it decides how much review work the team receives</li>
+              </ul>
+            </dd></div>
+            <div><dt>Finding</dt><dd>
+              The strongest indicators of an unusual claim, in order:
+              <ol class="rank">
+                <li><span>01</span>Outstanding amount</li>
+                <li><span>02</span>Sum insured</li>
+                <li><span>03</span>Submitted claim amount</li>
+                <li><span>04</span>Paid amount</li>
+              </ol>
+              <p class="rank-note">Ranked by feature importance. Magnitudes withheld, commercially sensitive.</p>
+            </dd></div>
+            <div><dt>Decision</dt><dd>Claims review stopped being uniform and became risk ordered, with the threshold as the dial between missed cases and reviewer workload. The known limits were written down alongside it: scarce labels, patterns that shift over time, and a need for periodic retraining with expert review alongside the model rather than instead of it.</dd></div>
+            <div><dt>Tools</dt><dd><div class="chips"><span>Python</span><span>scikit-learn</span><span>pandas</span><span>SQL</span><span>PostgreSQL</span></div></dd></div>
+          </dl>
+        </div></div></div>
+      </article>
+
+      <!-- ─────── record 02 ─────── -->
+      <article class="rec" data-cat="insurance">
+        <button type="button" class="rec-btn" aria-expanded="false" aria-controls="r2">
+          <span class="rec-n">R-02</span>
+          <span class="rec-t">
+            <h3>Customer segmentation and cross sell</h3>
+            <p>Star Assurance &middot; 2025 to 2026</p>
+          </span>
+          <span class="rec-tag">Insurance</span>
+          <span class="rec-tog" aria-hidden="true">+</span>
+        </button>
+        <div class="rec-body" id="r2"><div><div class="rec-in">
+          <dl class="qdm">
+            <div><dt>Question</dt><dd>Which existing customers are a sensible target for a second product, and on what evidence, rather than on whoever the sales team happened to call last?</dd></div>
+            <div><dt>Data</dt><dd>Customer records integrated across policy, claims and engagement data held in separate business systems, each with its own structure and its own quality problems. Sensitive customer information throughout, so access was controlled and the analysis worked on what it was entitled to see.</dd></div>
+            <div><dt>Method</dt><dd>
+              <ul>
+                <li>Integration first: one customer view assembled from several sources before any analysis</li>
+                <li>Data driven segmentation rather than segments inherited from a slide deck</li>
+                <li>Machine learning to surface behaviour patterns and engagement opportunities across segments</li>
+                <li>Output shaped as decision support dashboards, so business users could read it without a technical team</li>
+              </ul>
+            </dd></div>
+            <div><dt>Finding</dt><dd>A clearer picture of how customers actually behave, and segments defined by observed behaviour instead of assumption. The useful part was not the model, it was that the same customer view became reusable for the next question asked.</dd></div>
+            <div><dt>Decision</dt><dd>Cross sell targeting moved onto the segmentation, and the dashboards became the standing reference the business reads rather than a report produced on request.</dd></div>
+            <div><dt>Tools</dt><dd><div class="chips"><span>Python</span><span>pandas</span><span>SQL</span><span>Dashboards</span></div></dd></div>
+          </dl>
+        </div></div></div>
+      </article>
+
+      <!-- ─────── record 03 ─────── -->
+      <article class="rec" data-cat="reporting">
+        <button type="button" class="rec-btn" aria-expanded="false" aria-controls="r3">
+          <span class="rec-n">R-03</span>
+          <span class="rec-t">
+            <h3>IFRS 17 reporting pipeline</h3>
+            <p>Star Assurance &middot; 2025 to 2026</p>
+          </span>
+          <span class="rec-tag">Reporting</span>
+          <span class="rec-tog" aria-hidden="true">+</span>
+        </button>
+        <div class="rec-body" id="r3"><div><div class="rec-in">
+          <dl class="qdm">
+            <div><dt>Question</dt><dd>Can insurance contract reporting under IFRS 17 be produced the same way every period, without a manual assembly step that nobody can reconstruct afterwards?</dd></div>
+            <div><dt>Data</dt><dd>Insurance contract data drawn from core systems. This is reporting that reaches a regulator, so the bar is different from an internal dashboard: every figure has to be traceable back to the record it came from.</dd></div>
+            <div><dt>Method</dt><dd>
+              <ul>
+                <li>Automated pipeline replacing the manual reporting routine</li>
+                <li>Migrations tested against a copy of production before they ran against it, because a bad one would have reached the regulator</li>
+                <li>Append only treatment of financial records, so a figure is never overwritten and the history survives</li>
+                <li>Data quality monitoring on the inputs, not only checks on the outputs</li>
+              </ul>
+            </dd></div>
+            <div><dt>Finding</dt><dd>The reporting effort moved from repeated manual work each period to a reviewed pipeline run, and, more usefully, the same numbers can be reproduced later on demand.</dd></div>
+            <div><dt>Decision</dt><dd>Reporting became a repeatable process with an audit trail rather than a periodic scramble, and the finance team's time moved from assembling figures to checking them.</dd></div>
+            <div><dt>Tools</dt><dd><div class="chips"><span>Python</span><span>SQL</span><span>PostgreSQL</span><span>Docker</span><span>CI/CD</span></div></dd></div>
+          </dl>
+        </div></div></div>
+      </article>
+
+      <!-- ─────── record 04 ─────── -->
+      <article class="rec" data-cat="text">
+        <button type="button" class="rec-btn" aria-expanded="false" aria-controls="r4">
+          <span class="rec-n">R-04</span>
+          <span class="rec-t">
+            <h3>Real time text analytics dashboard</h3>
+            <p>Pensive Global Consultancy &middot; freelance</p>
+          </span>
+          <span class="rec-tag">Text analytics</span>
+          <span class="rec-tog" aria-hidden="true">+</span>
+        </button>
+        <div class="rec-body" id="r4"><div><div class="rec-in">
+          <dl class="qdm">
+            <div><dt>Question</dt><dd>The team was reading text data through a manual report produced periodically. Could they see it as it arrived instead, and would that change anything they do?</dd></div>
+            <div><dt>Data</dt><dd>Text from inconsistent sources, which is where nearly all the difficulty sat. Unclear and inconsistent records, no shared format, and nothing usable until it had been cleaned and normalised.</dd></div>
+            <div><dt>Method</dt><dd>
+              <ul>
+                <li>ETL pipeline to collect and prepare the text for analysis</li>
+                <li>Cleaning and normalisation rules built for records that disagree with each other</li>
+                <li>NLP analysis layer producing the measures the team actually asked about</li>
+                <li>Grafana dashboard as the reading surface, shipped as one live chart first and grown from there</li>
+              </ul>
+            </dd></div>
+            <div><dt>Finding</dt><dd>The reporting lag was the real problem rather than the analysis. Once the pipeline ran continuously the same questions were answerable at the moment they were asked.</dd></div>
+            <div><dt>Decision</dt><dd>The periodic manual report was retired. The dashboard is the tool the team reads now, and it analyses data in real time rather than in arrears.</dd></div>
+            <div><dt>Tools</dt><dd><div class="chips"><span>Python</span><span>ETL</span><span>NLP</span><span>Grafana</span></div></dd></div>
+          </dl>
+        </div></div></div>
+      </article>
+
+      <!-- ─────── record 05 ─────── -->
+      <article class="rec" data-cat="operations">
+        <button type="button" class="rec-btn" aria-expanded="false" aria-controls="r5">
+          <span class="rec-n">R-05</span>
+          <span class="rec-t">
+            <h3>Stock movement reporting off spreadsheets</h3>
+            <p>Polaris Process &middot; 2026, contract</p>
+          </span>
+          <span class="rec-tag">Operations</span>
+          <span class="rec-tog" aria-hidden="true">+</span>
+        </button>
+        <div class="rec-body" id="r5"><div><div class="rec-in">
+          <dl class="qdm">
+            <div><dt>Question</dt><dd>Where does stock actually go, and why can nobody answer that from the spreadsheets currently in use?</dd></div>
+            <div><dt>Data</dt><dd>Inventory levels and stock movements previously tracked in spreadsheets. The failure mode is familiar: several copies, no movement history, and no way to reconstruct how a level reached its current value.</dd></div>
+            <div><dt>Method</dt><dd>
+              <ul>
+                <li>A movement history as the source of truth, with levels derived from it rather than typed in</li>
+                <li>Reporting built on that history, so any level can be traced back through the movements that produced it</li>
+                <li>Delivered end to end and handed over, including setup that works from a clean clone</li>
+              </ul>
+            </dd></div>
+            <div><dt>Finding</dt><dd>Once movements were recorded rather than levels overwritten, the questions the business could not previously answer became ordinary queries.</dd></div>
+            <div><dt>Decision</dt><dd>Stock movement, levels and reporting moved into one system and off spreadsheets, and the client runs it without me.</dd></div>
+            <div><dt>Tools</dt><dd><div class="chips"><span>SQL</span><span>Node.js</span><span>React</span><span>Reporting</span></div></dd></div>
+          </dl>
+        </div></div></div>
+      </article>
+
+      <!-- ─────── record 06 ─────── -->
+      <article class="rec" data-cat="operations">
+        <button type="button" class="rec-btn" aria-expanded="false" aria-controls="r6">
+          <span class="rec-n">R-06</span>
+          <span class="rec-t">
+            <h3>Transaction data that has to reconcile</h3>
+            <p>CT Core Solutions &middot; core banking</p>
+          </span>
+          <span class="rec-tag">Operations</span>
+          <span class="rec-tog" aria-hidden="true">+</span>
+        </button>
+        <div class="rec-body" id="r6"><div><div class="rec-in">
+          <dl class="qdm">
+            <div><dt>Question</dt><dd>What does it take for transaction data to be trustworthy enough that a reconciliation always balances, rather than usually balancing?</dd></div>
+            <div><dt>Data</dt><dd>Core banking transaction data, the setting where correctness is not negotiable and a discrepancy is not an interesting anomaly, it is a defect.</dd></div>
+            <div><dt>Method</dt><dd>
+              <ul>
+                <li>Backend services and data access for the core banking platform</li>
+                <li>Append only treatment of financial records: a state change is a new row, never an update in place</li>
+                <li>Reconciliation as a property the data model guarantees rather than a report that discovers problems late</li>
+              </ul>
+            </dd></div>
+            <div><dt>Finding</dt><dd>Most reconciliation problems are not analysis problems. They are recorded upstream, at the moment a row is overwritten instead of appended.</dd></div>
+            <div><dt>Decision</dt><dd>This is the rule I have carried into every dataset since. It is why the insurance reporting work treats financial records the same way.</dd></div>
+            <div><dt>Tools</dt><dd><div class="chips"><span>Java</span><span>Spring Boot</span><span>SQL</span></div></dd></div>
+          </dl>
+        </div></div></div>
+      </article>
+
+      <!-- ADD NEW RECORDS HERE. Copy a block above, bump R-0n, give the
+           body a new id, and set data-cat to a filter value. -->
+
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════════ demo ════════════════════ -->
+<section id="demo" aria-label="Interactive demonstration">
+  <div class="wrap">
+    <div class="shead rv"><span class="n">&sect; 03</span><span>Worked example</span><span class="line"></span><span>Running in your browser</span></div>
+    <h2 class="stitle rv">The threshold is the decision, not the model</h2>
+    <p class="slede rv">
+      Anomaly detection does not tell you which claims are fraudulent. It ranks them, and
+      then somebody has to choose where to cut. That choice is a business decision about
+      how much review capacity exists, and this is the conversation I would rather have
+      with a stakeholder than a conversation about algorithms. Move the slider.
+    </p>
+
+    <div class="card demo rv">
+      <div class="demo-h">
+        <b>Claim review threshold explorer</b>
+        <span class="r">400 claims &middot; robust ratio score</span>
+      </div>
+
+      <div class="synth">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M12 9v4M12 17h.01M10.3 3.9 1.8 18a2 2 0 0 0 1.7 3h17a2 2 0 0 0 1.7-3L13.7 3.9a2 2 0 0 0-3.4 0z"/></svg>
+        <p style="margin:0"><b>Synthetic data.</b> These 400 claims are generated in your browser from a fixed seed. They are not Star Assurance data and no real figures are shown anywhere on this page. The purpose is to demonstrate the method and the tradeoff, nothing more.</p>
+      </div>
+
+      <div class="demo-b">
+        <!-- scatter -->
+        <div class="pane">
+          <div class="pane-h">
+            <h4>Claim amount against cover</h4>
+            <span>Flagged claims ringed</span>
+          </div>
+          <svg class="plot" id="scatter" viewBox="0 0 460 300" role="img"
+               aria-label="Scatter plot of claim amount against sum insured. Claims scoring above the threshold are flagged and drawn in the critical colour.">
+          </svg>
+          <div class="legend">
+            <span><i class="lk-normal"></i>Within expected range</span>
+            <span><i class="lk-flagged"></i>Flagged for review</span>
+          </div>
+        </div>
+
+        <!-- score distribution + readouts -->
+        <div class="pane">
+          <div class="pane-h">
+            <h4>Where the cut falls</h4>
+            <span>Score distribution</span>
+          </div>
+          <dl class="readout">
+            <div><dt>Flagged</dt><dd id="roCount">0<small>claims</small></dd></div>
+            <div><dt>Review load</dt><dd id="roRate">0<small>%</small></dd></div>
+          </dl>
+          <svg class="plot" id="hist" viewBox="0 0 320 190" role="img"
+               aria-label="Histogram of anomaly scores with a vertical line marking the current threshold. Bars to the right of the line are flagged.">
+          </svg>
+          <div class="legend">
+            <span><i class="lk-normal"></i>Below threshold</span>
+            <span><i class="lk-flagged"></i>At or above threshold</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="ctrls">
+        <div class="ctrl">
+          <label for="thr">Review threshold</label>
+          <input id="thr" type="range" min="10" max="37" step="1" value="26"
+                 aria-describedby="thrHelp">
+          <span class="rval" id="thrv">2.60 &sigma;</span>
+        </div>
+        <p id="thrHelp" class="cnote" style="margin:10px 0 0">
+          Score is how far a claim sits from the typical claim to cover relationship,
+          in robust standard deviations. Lower threshold, more claims reviewed.
+        </p>
+      </div>
+
+      <div class="tblwrap">
+        <button type="button" class="tbltog" id="tblBtn" aria-expanded="false" aria-controls="tbl">Show the numbers as a table</button>
+        <div id="tbl" hidden class="tblscroll">
+          <table class="dt">
+            <caption>Score distribution at the current threshold. Same data as the histogram.</caption>
+            <thead>
+              <tr><th scope="col">Score band</th><th scope="col">Claims</th><th scope="col">Share</th><th scope="col">State</th></tr>
+            </thead>
+            <tbody id="tblBody"></tbody>
+          </table>
+        </div>
+      </div>
+
+      <p class="demo-f">
+        Push the threshold down and the flagged count climbs faster than most people expect,
+        because the scores are not evenly spread. That curve, not the choice of algorithm,
+        is what decides whether a review team can live with the system.
+        <small>Synthetic claims, fixed seed &middot; robust z score on the claim to cover ratio &middot; not production data</small>
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════════ toolkit ════════════════════ -->
+<section id="toolkit" aria-label="Toolkit">
+  <div class="wrap">
+    <div class="shead rv"><span class="n">&sect; 04</span><span>Toolkit</span><span class="line"></span><span>Working knowledge</span></div>
+    <h2 class="stitle rv">What I reach for</h2>
+    <p class="slede rv">
+      Listed by what it is for, not by logo. <!-- TRIM THIS LIST to what you have
+      actually used in anger. An interviewer will pick one at random and ask about it. -->
+    </p>
+
+    <div class="cols c3 rv">
+      <div class="cell">
+        <h4>Querying and shaping</h4>
+        <ul>
+          <li><b>SQL</b>, joins, window functions, query tuning against real volumes</li>
+          <li><b>PostgreSQL</b>, schema design and migrations</li>
+          <li><b>Python</b> with pandas and NumPy for the work SQL is awkward at</li>
+          <li><b>ETL pipelines</b>, scheduled rather than run by hand</li>
+        </ul>
+      </div>
+      <div class="cell">
+        <h4>Analysis and modelling</h4>
+        <ul>
+          <li><b>Exploratory analysis</b>, distributions and outliers before conclusions</li>
+          <li><b>Anomaly detection</b>, Isolation Forest, clustering, statistical methods</li>
+          <li><b>Segmentation</b> and customer behaviour analysis</li>
+          <li><b>scikit-learn</b> for the modelling, with evaluation agreed first</li>
+        </ul>
+      </div>
+      <div class="cell">
+        <h4>Communicating it</h4>
+        <ul>
+          <li><b>Grafana</b> dashboards over live pipelines</li>
+          <li><b>Decision support dashboards</b> business users read unaided</li>
+          <li><b>Data quality monitoring</b> on inputs, so a broken chart is caught early</li>
+          <li><b>Git, Docker, CI/CD</b>, because analysis that cannot be rerun is a one off</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="shead rv" style="margin-top:56px"><span class="n">&sect; 05</span><span>Education</span><span class="line"></span></div>
+    <div class="edu rv">
+      <article class="edu-row">
+        <span>Degree</span>
+        <div><h3>BTech, Artificial Intelligence and Robotics</h3><p>Bachelor of Technology</p></div>
+      </article>
+      <article class="edu-row">
+        <span>Diploma</span>
+        <div><h3>HND, Computer Science</h3><p>Higher National Diploma</p></div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════════ contact ════════════════════ -->
+<section id="contact" aria-label="Contact">
+  <div class="wrap">
+    <div class="shead rv"><span class="n">&sect; 06</span><span>Contact</span><span class="line"></span></div>
+    <div class="contact rv">
+      <h3>Let's talk</h3>
+      <p>
+        Open to data analyst roles, contract work and freelance engagements, remote or
+        on site in Accra. If you have a question with a number attached to it, I would
+        like to hear about it.
+      </p>
+      <div class="hbtns" style="margin-top:26px">
+        <button type="button" class="btn solid" id="copyMail2" data-mail="opokukofimawunyo@gmail.com">
+          <span id="copyTxt2">opokukofimawunyo@gmail.com</span><svg class="cpi" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="9" width="12" height="12" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+        </button>
+        <a class="btn" href="https://www.linkedin.com/in/bryan-opoku-837127208" rel="noopener">LinkedIn &#8599;</a>
+        <a class="btn" href="https://bryanspirit.github.io" rel="noopener">AI and software portfolio &#8599;</a>
+      </div>
+    </div>
+
+    <div class="foot">
+      <span>Bryan Opoku Mawunyo Kofi, 2026</span>
+      <span><a href="https://github.com/Bryanspirit">GitHub</a> &middot; <a href="https://www.linkedin.com/in/bryan-opoku-837127208">LinkedIn</a> &middot; <a href="https://bryanspirit.github.io">bryanspirit.github.io</a></span>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<div class="tip" id="tip" role="status" aria-live="polite"></div>
+<script src="assets/js/main.js"></script>
+</body>
+</html>
